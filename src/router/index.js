@@ -35,6 +35,15 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
     meta: { requireAuth: true },
   },
+  {
+    path: "/blogs",
+    name: "Blogs",
+    component: () => import("../views/Blogs.vue"),
+  },
+  {
+    path: "/blogs/:id",
+    component: () => import("../views/BlogsDetail.vue"),
+  },
 ];
 
 const router = new VueRouter({
