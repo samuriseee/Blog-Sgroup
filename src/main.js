@@ -4,9 +4,12 @@ import router from "./router";
 import axios from "axios";
 import firebase from "firebase/app";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+import { BPagination } from 'bootstrap-vue'
+
 
 Vue.prototype.$axios = axios;
 Vue.config.productionTip = false;
+Vue.component('b-pagination', BPagination)
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 

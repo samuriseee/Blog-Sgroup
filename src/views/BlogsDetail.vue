@@ -248,11 +248,11 @@ figure {
     }
   }
 }
+
 .container .content main {
   text-align: justify;
-
   img {
-    width: 1000px;
+    width: 1200px;
     display: flex;
     object-fit: cover;
     margin: 0 auto;

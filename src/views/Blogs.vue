@@ -11,7 +11,7 @@
       <h3>All articles</h3>
       <div class="grid2">
         <div
-          v-for="blog in blogs"
+          v-for="blog in paginatedItems"
           :key="'blog-' + blog.id"
           class="blogContent"
           @click="$router.push('/blogs/' + blog.id)"
@@ -20,16 +20,25 @@
           <p>{{ blog.title }}</p>
         </div>
       </div>
+        <b-row>
+          <b-col class="mt-3">
+            <b-pagination
+              @change="onPageChanged"
+              :total-rows="totalRows"
+              :per-page="perPage"
+              v-model="currentPage"
+              pills
+              align="center"
+              class="my-0"
+            />
+          </b-col>
+        </b-row>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: "Blogs",
-  data() {
-    return {
-      blogs: [
+  const blogs = [
         {
           createdAt: "2021-07-24T21:56:57.780Z",
           author: "Al Hoeger IV",
@@ -153,9 +162,33 @@ export default {
             "Repellendus omnis aut consectetur molestiae deleniti minus rem. Laboriosam sed sit itaque tempora dolorum cum ipsum quas. Fugit laborum eum et non accusantium et eum. Quis delectus architecto sint et rerum est. Sit similique voluptas recusandae ad. Dignissimos consequatur nostrum totam tempora quae ipsum ut.\n \rVoluptatum mollitia ratione ipsam qui. Maiores eum odit architecto magni quasi. Consequatur rem laboriosam voluptatum aut enim dolor molestiae unde. Animi provident minima soluta unde eveniet accusantium. Molestiae sunt asperiores eaque natus quas reiciendis eum esse.\n \rUt illum et sapiente aliquam molestiae. Aspernatur repudiandae ad eum perferendis reprehenderit temporibus soluta. Praesentium tempore sunt voluptate error optio minus ducimus qui aut.",
           id: "12",
         },
-      ],
+      ]
+export default {
+  name: "Blogs",
+  data() {
+    return {
+      blogs: blogs,
+      paginatedItems: blogs,
+      currentPage: 1,
+      perPage: 4,
+      totalRows: blogs.length,
     };
   },
+  methods: {
+    paginate(page_size, page_number) {
+      let itemsToParse = this.blogs;
+      this.paginatedItems = itemsToParse.slice(
+        page_number * page_size,
+        (page_number + 1) * page_size
+      );
+    },
+    onPageChanged(page) {
+      this.paginate(this.perPage, page - 1);
+    }
+  },
+  mounted() {
+    this.paginate(this.perPage, 0);
+  }
 };
 </script>
 
@@ -165,7 +198,8 @@ $black: #000000;
 .container {
   text-align: center;
   .blogs {
-    margin: 50px;
+    width: 70%;
+    margin: 50px auto;
     border-top: 2px solid $black;
   }
   h1 {
@@ -203,4 +237,6 @@ $black: #000000;
     margin: 70px 0px 10px 0px;
   }
 }
+
+
 </style>
