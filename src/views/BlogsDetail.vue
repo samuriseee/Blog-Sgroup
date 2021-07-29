@@ -9,7 +9,7 @@
     <!-- full width image  -->
     <figure class="full-width">
       <img
-        :src="blogs[$route.params.id - 1].thumbnail"
+        :src="blogs[$route.params.id].thumbnail"
       /> 
     </figure>
     <!-- below image  -->
@@ -17,11 +17,11 @@
       <!-- author information -->
       <div class="author">
         <div class="text">
-          <img :src="blogs[$route.params.id - 1].avatar" alt="" />
+          <img :src="blogs[$route.params.id].avatar" alt="" />
           <div>
-            <p>{{ blogs[$route.params.id - 1].author }}</p>
+            <p>{{ blogs[$route.params.id].author }}</p>
             <span style="opacity: 0.8"
-              >{{ blogs[$route.params.id - 1].createdAt }}.4 min read</span
+              >{{ blogs[$route.params.id].createdAt }}.4 min read</span
             >
           </div>
         </div>
@@ -32,18 +32,31 @@
       </div>
       <!-- main content  -->
       <main>
-        <p>{{ blogs[$route.params.id - 1].content }}</p>
+        <p>{{ blogs[$route.params.id].content }}</p>
         <p
           style="font-size: 2rem; padding: 40px 0px 20px 0px; font-weight: 700"
         >
           Next on the pipeline
         </p>
-        <p>{{ blogs[$route.params.id - 1].content }}</p>
+        <p>{{ blogs[$route.params.id].content }}</p>
         <img src="https://www.linkpicture.com/q/angle.jpg" alt="" />
-        <p>{{ blogs[$route.params.id - 1].content }}</p>
-        <p>{{ blogs[$route.params.id - 1].content }}</p>
+        <p>{{ blogs[$route.params.id].content }}</p>
+        <p>{{ blogs[$route.params.id].content }}</p>
       </main>
       <postBottom />
+      <!-- furtherReading -->
+      <div class="wrapper">
+          <div
+              v-for="blog in blogs"
+              :key="'blog-' + blog.id"
+              @click="$router.push('/blogs/' + blog.id)"
+          >
+          <article>
+              <img :src="blog.thumbnail" />
+              <p>{{ blog.title }}</p>
+          </article>
+          </div>
+      </div>
     </div>
   </div>
 </template>
@@ -58,6 +71,15 @@ export default {
   data() {
     return {
       blogs: [
+        {
+          "createdAt": "2020-10-07T05:49:56.847Z",
+          "author": "Lowell Little",
+          "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
+          "thumbnail": "https://media.giphy.com/media/RJOqH3lewU5LKJkDVd/giphy.gif",
+          "title": "Corrupti et ut aut laborum repellendus esse saepe corporis aut.",
+          "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
+          "id": "0"
+        },
         {
           createdAt: "2021-07-24T21:56:57.780Z",
           author: "Al Hoeger IV",
@@ -199,24 +221,6 @@ export default {
           "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
           "id": "14"
         },
-        {
-          "createdAt": "2020-10-07T05:49:56.847Z",
-          "author": "Lowell Little",
-          "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
-          "thumbnail": "https://giphy.com/embed/9DJCR3ZI69yVp2u6uQ/video",
-          "title": "Corrupti et ut aut laborum repellendus esse saepe corporis aut.",
-          "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
-          "id": "15"
-        },
-        {
-          "createdAt": "2020-10-07T05:49:56.847Z",
-          "author": "Lowell Little",
-          "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
-          "thumbnail": "https://media.giphy.com/media/RJOqH3lewU5LKJkDVd/giphy.gif",
-          "title": "Corrupti et ut aut laborum repellendus esse saepe corporis aut.",
-          "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
-          "id": "16"
-        },
       ],
     };
   },
@@ -304,6 +308,33 @@ figure {
     padding: 30px 0px;
     width: 80%;
     margin: 0 auto;
+  }
+}
+.wrapper{
+  width: 100%;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  article{
+    cursor: pointer;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    transition-duration: 0.5s;
+    &:hover{
+      transform: scale(1.06);
+      transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+      color: green;
+    }
+    img {
+      width: 380px;
+      height: 240px;
+      margin: 70px 0px 10px 0px;
+    }
+    p {
+      font-weight: 650px;
+      width:80%;
+      margin: 0 auto;
+      padding:10px;
+    }
   }
 }
 </style>

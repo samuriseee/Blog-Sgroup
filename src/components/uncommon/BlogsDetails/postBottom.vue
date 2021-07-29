@@ -26,7 +26,7 @@
               </div>
           </div>
       </aside>
-
+	<h2 class="further-reading__heading">What to read next?</h2>
   </div>
 </template>
 
@@ -63,7 +63,7 @@ $black: #000000;
 }
 
 .further-reading__heading {
-	margin-bottom: 2rem;
+	margin-bottom: -2rem;
 	text-align: center;
 }
 
