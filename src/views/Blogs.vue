@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <img src="https://www.linkpicture.com/q/mainPic.png" class="mainPic" />
+    <img src="https://www.nordicrose.net/content/images/2020/06/enable-focus-mode-gregorian-chant.gif" class="mainPic" />
     <h1>
       A few words about this blog platform. Ghost, and how this site was made
     </h1>
@@ -43,7 +43,7 @@
           createdAt: "2021-07-24T21:56:57.780Z",
           author: "Al Hoeger IV",
           avatar: "https://cdn.fakercloud.com/avatars/plbabin_128.jpg",
-          thumbnail: "http://placeimg.com/640/480/nature",
+          thumbnail: "https://www.nordicrose.net/content/images/2020/05/design-system.gif",
           title: "Beatae minima at sit est ut ut ut quia.",
           content:
             "Sequi eveniet inventore est dolorem suscipit accusantium voluptas mollitia rem. Vel aut esse placeat. Voluptates nisi exercitationem voluptate ad deserunt amet nam aut quaerat.\n \rEveniet et at ut eos aut consequuntur provident sequi et. Aliquam neque eius similique totam et blanditiis. Qui omnis consectetur delectus dicta et consectetur id ab. Provident dolor dolorum labore quia magni perspiciatis quia.\n \rSed tempore eaque. Provident ut ad quae qui. Et ea velit pariatur vero corporis fuga.",
@@ -53,7 +53,7 @@
           createdAt: "2021-07-24T19:24:53.998Z",
           author: "Sabrina Grady",
           avatar: "https://cdn.fakercloud.com/avatars/falconerie_128.jpg",
-          thumbnail: "http://placeimg.com/640/480/nature",
+          thumbnail: "https://www.nordicrose.net/content/images/2020/05/benefits-of-not-choosing-your-characters-wisely.gif",
           title: "Totam consequatur enim dolorem.",
           content:
             "Sit quae repellat officia voluptas. Ipsum quod qui exercitationem provident dolorem ut debitis. Et ipsam sit ducimus et ex nihil similique voluptatum necessitatibus. Reiciendis tempora non et et. Quis necessitatibus corrupti veniam dolore ut odio sapiente.\n \rIn architecto nihil voluptas doloribus. Ut officiis quasi ut facere et molestiae. Consequatur magnam quasi. Dicta ex occaecati beatae delectus inventore sunt vero.\n \rAut doloremque minima inventore mollitia voluptates aut hic. Non non fuga nesciunt eos et placeat. Libero quos corrupti excepturi repudiandae voluptatum iste ut odio. Labore quis provident cum cupiditate. Laborum earum perferendis. Blanditiis sed recusandae omnis error possimus.",
@@ -63,7 +63,7 @@
           createdAt: "2021-07-25T07:22:56.760Z",
           author: "Clinton Romaguera",
           avatar: "https://cdn.fakercloud.com/avatars/davidbaldie_128.jpg",
-          thumbnail: "http://placeimg.com/640/480/nature",
+          thumbnail: "https://www.nordicrose.net/content/images/2020/05/horrors-of-remote-work.gif",
           title:
             "Rerum molestias ea voluptas nostrum assumenda quia optio possimus.",
           content:
@@ -74,7 +74,7 @@
           createdAt: "2021-07-25T12:38:42.765Z",
           author: "Hope Lebsack MD",
           avatar: "https://cdn.fakercloud.com/avatars/brandonburke_128.jpg",
-          thumbnail: "http://placeimg.com/640/480/nature",
+          thumbnail: "https://www.nordicrose.net/content/images/2020/05/someone-shared-a-google-doc.gif",
           title: "Qui modi ipsa et consequatur.",
           content:
             "Magni est necessitatibus aut. Et repudiandae voluptas eum voluptates maxime. Quis quisquam officia deleniti.\n \rQui nobis sit. Ducimus rerum quia minus nobis distinctio. Quis esse aut ipsam optio pariatur enim qui. Ut qui pariatur consequatur voluptatem. Dignissimos perferendis eos. Iure reprehenderit velit modi officiis.\n \rOfficiis blanditiis qui autem quis a fuga at. Et sunt recusandae et ipsa sit totam rem. Non et officia quia. Quos cum quia voluptate ut. Nulla porro assumenda odit. Minima temporibus officiis id dicta ut excepturi corrupti dolorem maiores.",
@@ -84,7 +84,7 @@
           createdAt: "2021-07-25T12:47:28.528Z",
           author: "Guy Mraz",
           avatar: "https://cdn.fakercloud.com/avatars/andrewofficer_128.jpg",
-          thumbnail: "http://placeimg.com/640/480/nature",
+          thumbnail: "https://www.nordicrose.net/content/images/2020/05/Remote-design-sprint-figma.png",
           title: "Qui aut libero libero omnis.",
           content:
             "Non adipisci id fugiat id in laboriosam. Esse mollitia minima. Corporis expedita odit velit necessitatibus sint mollitia fuga. Ut nulla ex quo assumenda voluptatem. Mollitia reprehenderit laborum sed sit ut impedit tempore sed.\n \rQuia corrupti laudantium. Voluptatem placeat et. Ea in aut sunt et ducimus sed facilis laboriosam quos. Vel optio est voluptatum expedita molestias in.\n \rMinima dolorem aut et fuga commodi quod eum consequatur. Dolor quis et. Odit fuga quod omnis. Ut ut molestiae. Ut in voluptatum earum ab incidunt consequatur libero dicta iste. Voluptatum ex aut dolor aut possimus esse.",
@@ -94,7 +94,7 @@
           createdAt: "2021-07-25T07:58:04.873Z",
           author: "Rita Kilback",
           avatar: "https://cdn.fakercloud.com/avatars/n_tassone_128.jpg",
-          thumbnail: "http://placeimg.com/640/480/nature",
+          thumbnail: "https://www.nordicrose.net/content/images/2020/05/six-findings-from-director-level-interviews-on-remote-work-1.gif",
           title: "Nesciunt ut eum pariatur atque voluptates.",
           content:
             "Et officia et voluptatem quia accusantium ea repellat. Consequatur vero quae atque eos cum nemo quia. Est consectetur iusto sed sed ut ut itaque labore. Possimus necessitatibus reiciendis ullam commodi quaerat quia consequatur ab. Quas sit vitae officia. Rerum eum id nihil voluptatem debitis voluptatem.\n \rEos perferendis ipsam quo dicta neque. Unde sed amet. Quis dolore laudantium recusandae incidunt illo atque autem error ducimus. Maxime culpa vitae aut autem. Et et aperiam vitae dolorum. Facere molestias ut ea dolor et repellendus.\n \rNeque veniam quidem aspernatur numquam. Voluptatibus asperiores excepturi. Sunt aut magni at enim modi sit provident unde animi.",
@@ -104,7 +104,7 @@
           createdAt: "2021-07-24T22:28:05.664Z",
           author: "Glen Vandervort",
           avatar: "https://cdn.fakercloud.com/avatars/carlosm_128.jpg",
-          thumbnail: "http://placeimg.com/640/480/nature",
+          thumbnail: "https://www.nordicrose.net/content/images/2020/04/benefits-of-distributed-teams.gif",
           title: "Placeat qui et.",
           content:
             "Incidunt quaerat iure nihil ut ipsam. Rerum ut quae mollitia aut dolor nobis non natus. Qui maxime fuga magni. Magnam cumque voluptas asperiores dolore. Quia deserunt error autem ex. Commodi veritatis ut sit.\n \rDolor quod dolor et est sit ut quae doloremque quasi. Porro impedit cumque quasi aspernatur. Veniam quo placeat iste nihil aut a omnis. Odit distinctio eligendi labore. Optio rerum adipisci. Temporibus culpa delectus quod unde quos enim nihil error.\n \rAt deleniti consequuntur omnis esse. Eos voluptatem dolorum reiciendis. Qui facere repellat. Voluptatem incidunt aperiam quas culpa.",
@@ -114,7 +114,7 @@
           createdAt: "2021-07-24T23:04:29.995Z",
           author: "Eric Gutkowski",
           avatar: "https://cdn.fakercloud.com/avatars/jmillspaysbills_128.jpg",
-          thumbnail: "http://placeimg.com/640/480/nature",
+          thumbnail: "https://www.nordicrose.net/content/images/2020/04/career-growth-distributed-team.gif",
           title:
             "Perferendis doloremque quod voluptatum distinctio quo asperiores et adipisci.",
           content:
@@ -125,7 +125,7 @@
           createdAt: "2021-07-25T06:49:27.965Z",
           author: "Ervin Swift I",
           avatar: "https://cdn.fakercloud.com/avatars/nemanjaivanovic_128.jpg",
-          thumbnail: "http://placeimg.com/640/480/nature",
+          thumbnail: "https://www.nordicrose.net/content/images/2020/03/figma-blog-template-for-free-2.gif",
           title:
             "Ullam quo placeat sed nemo labore maiores consequatur excepturi.",
           content:
@@ -136,7 +136,7 @@
           createdAt: "2021-07-25T08:58:58.778Z",
           author: "Kristina Koepp",
           avatar: "https://cdn.fakercloud.com/avatars/iqonicd_128.jpg",
-          thumbnail: "http://placeimg.com/640/480/nature",
+          thumbnail: "https://www.nordicrose.net/content/images/2020/03/modern-remote-working-tools.gif",
           title: "Cum quaerat aut laboriosam assumenda.",
           content:
             "Ullam qui qui et quo voluptas nostrum consequatur dolor qui. Eveniet maxime porro aut et nihil debitis qui non. Modi sint totam cumque illo eos reprehenderit dolore. Harum sint culpa sint. Dolores id ab id amet assumenda. Omnis amet occaecati quidem debitis at autem explicabo quia.\n \rSed ipsum numquam eum ut nemo necessitatibus consequatur praesentium. Doloribus ut sequi. Maiores pariatur soluta qui labore.\n \rQuaerat aut dignissimos voluptatum quod et. Nihil est aliquid beatae ex dolorem aut aliquid. Laboriosam sed quis et error. Quo voluptates repellendus temporibus laborum esse magni omnis illum.",
@@ -146,7 +146,7 @@
           createdAt: "2021-07-25T00:45:11.934Z",
           author: "Norman Jerde I",
           avatar: "https://cdn.fakercloud.com/avatars/fiterik_128.jpg",
-          thumbnail: "http://placeimg.com/640/480/nature",
+          thumbnail: "https://www.nordicrose.net/content/images/2020/03/remote-work-distributed-teams-sources.gif",
           title: "Ipsum natus asperiores sit odio.",
           content:
             "Quo sit minus atque eveniet tempore odio in rerum provident. Qui voluptate quia. Quod consequatur non non consequatur doloribus recusandae voluptas. Aut ab qui doloremque et enim dolore perferendis. Vel adipisci hic delectus quis. Temporibus inventore commodi dolor voluptas suscipit minima eaque explicabo.\n \rEx dolorem ea. Qui voluptates corporis optio maiores quis. Et dolor est aut ratione voluptas. Repellendus vero fuga non.\n \rInventore molestiae est. Eum aperiam maxime explicabo nihil magnam commodi. Occaecati id magnam ullam sunt veritatis quidem eaque.",
@@ -156,11 +156,47 @@
           createdAt: "2021-07-25T07:03:56.247Z",
           author: "Tyrone Hoeger Jr.",
           avatar: "https://cdn.fakercloud.com/avatars/russell_baylis_128.jpg",
-          thumbnail: "http://placeimg.com/640/480/nature",
+          thumbnail: "https://www.nordicrose.net/content/images/2020/03/hello2.gif",
           title: "Voluptatibus consequatur dolor harum qui.",
           content:
             "Repellendus omnis aut consectetur molestiae deleniti minus rem. Laboriosam sed sit itaque tempora dolorum cum ipsum quas. Fugit laborum eum et non accusantium et eum. Quis delectus architecto sint et rerum est. Sit similique voluptas recusandae ad. Dignissimos consequatur nostrum totam tempora quae ipsum ut.\n \rVoluptatum mollitia ratione ipsam qui. Maiores eum odit architecto magni quasi. Consequatur rem laboriosam voluptatum aut enim dolor molestiae unde. Animi provident minima soluta unde eveniet accusantium. Molestiae sunt asperiores eaque natus quas reiciendis eum esse.\n \rUt illum et sapiente aliquam molestiae. Aspernatur repudiandae ad eum perferendis reprehenderit temporibus soluta. Praesentium tempore sunt voluptate error optio minus ducimus qui aut.",
           id: "12",
+        },
+        {
+          "createdAt": "2021-06-05T16:51:44.780Z",
+          "author": "Ms. Sidney Gottlieb",
+          "avatar": "https://cdn.fakercloud.com/avatars/wikiziner_128.jpg",
+          "thumbnail": "https://www.nordicrose.net/content/images/2020/03/ghost-figma-publishing-cms-design.gif",
+          "title": "Eos minima est.",
+          "content": "Aut voluptas dolorum libero sed natus voluptas. Commodi molestiae maxime esse dicta officia in ipsam. Voluptates facilis rerum et accusamus quo quis quidem fuga. Eveniet ducimus sapiente ut earum autem sit et. Voluptates aut laudantium.\n \rDeserunt temporibus eius. Et voluptatem enim odio ipsam saepe. Ea officia qui aspernatur voluptatem aliquid.\n \rEnim quaerat omnis. Provident ut velit et distinctio ut iure quia et consequatur. Ab qui et nostrum eaque qui. Labore laudantium excepturi iste dolorem odio temporibus vel.",
+          "id": "13"
+        },
+        {
+          "createdAt": "2020-10-07T05:49:56.847Z",
+          "author": "Lowell Little",
+          "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
+          "thumbnail": "https://www.nordicrose.net/content/images/2020/03/offf-barcelona.jpg",
+          "title": "Corrupti corporis aut.",
+          "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
+          "id": "14"
+        },
+        {
+          "createdAt": "2020-10-07T05:49:56.847Z",
+          "author": "Lowell Little",
+          "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
+          "thumbnail": "https://giphy.com/embed/9DJCR3ZI69yVp2u6uQ/video",
+          "title": "repellendus esse saepe corporis aut.",
+          "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
+          "id": "15"
+        },
+        {
+          "createdAt": "2020-10-07T05:49:56.847Z",
+          "author": "Lowell Little",
+          "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
+          "thumbnail": "https://media.giphy.com/media/RJOqH3lewU5LKJkDVd/giphy.gif",
+          "title": "Corrupti et ut aut laborum repellendus esse saepe corporis aut.",
+          "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
+          "id": "16"
         },
       ]
 export default {
@@ -198,7 +234,7 @@ $black: #000000;
 .container {
   text-align: center;
   .blogs {
-    width: 70%;
+    width: 65%;
     margin: 50px auto;
     border-top: 2px solid $black;
   }
@@ -210,6 +246,8 @@ $black: #000000;
     font-weight: bold;
   }
   .mainPic {
+    width: 900px;
+    height: 600px;
     margin: 70px 0px;
   }
 }
@@ -226,14 +264,14 @@ $black: #000000;
     width: 80%;
     margin: 0 auto;
     padding: 5px;
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1.375rem;
+    font-weight: 500;
   }
 }
 .blogContent {
   img {
-    width: 400px;
-    height: 200px;
+    width: 380px;
+    height: 240px;
     margin: 70px 0px 10px 0px;
   }
 }

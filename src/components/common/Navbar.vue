@@ -5,8 +5,14 @@
     <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/blogs">Blog</router-link></li>
       <li><router-link to="/about">About</router-link></li>
-      <li><router-link to="/register">Register</router-link></li>
-      <li><router-link to="/login">Login</router-link></li>
+      <!-- <li><router-link to="/register">Register</router-link></li>
+      <li><router-link to="/login">Login</router-link></li> -->
+      <b-nav-item-dropdown text="User" right class="dropdown">
+          <b-dropdown-item to="#">Profile</b-dropdown-item>
+          <b-dropdown-item to="/register">Register</b-dropdown-item>
+          <b-dropdown-item to="/login">Login</b-dropdown-item>
+          <b-dropdown-item to="#">Sign Out</b-dropdown-item>
+      </b-nav-item-dropdown>
     </ul>
   </div>
 </template>
@@ -53,4 +59,5 @@ $black: #000000;
     text-transform: uppercase;
   }
 }
+
 </style>
