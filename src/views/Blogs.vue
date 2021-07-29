@@ -2,23 +2,26 @@
   <div class="container">
     <img src="https://www.nordicrose.net/content/images/2020/06/enable-focus-mode-gregorian-chant.gif" class="mainPic" />
     <h1>
-      A few words about this blog platform. Ghost, and how this site was made
+      Enable your focus mode by immersive Gregorian chants from the 17th century
     </h1>
-    <span style="font-size: 1.3rem"
-      >Why Ghost ($ Figma) instead of Medium, WordPress or other options?</span
-    >
+    <p style="font-size: 1.4rem;width:60%;margin:0 auto;"
+      >At some point, all instrumental music aiming for increasing focus starts to feel tedious. Classical piano, mellow beats, electronic music in general, even the Tibetan bowls, white noise and binaural beats become numb.
+      </p>
     <div class="blogs">
       <h3>All articles</h3>
+      
       <div class="grid2">
-        <div
-          v-for="blog in paginatedItems"
-          :key="'blog-' + blog.id"
-          class="blogContent"
-          @click="$router.push('/blogs/' + blog.id)"
-        >
-          <img :src="blog.thumbnail" />
-          <p>{{ blog.title }}</p>
-        </div>
+          <div
+            v-for="blog in paginatedItems"
+            :key="'blog-' + blog.id"
+            class="blogContent"
+            @click="$router.push('/blogs/' + blog.id)"
+          >
+            
+            <img :src="blog.thumbnail" />
+            <p>{{ blog.title }}</p>
+          
+      </div>
       </div>
         <b-row>
           <b-col class="mt-3">
@@ -39,6 +42,15 @@
 
 <script>
   const blogs = [
+        {
+          "createdAt": "2020-10-07T05:49:56.847Z",
+          "author": "Lowell Little",
+          "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
+          "thumbnail": "https://media.giphy.com/media/RJOqH3lewU5LKJkDVd/giphy.gif",
+          "title": "Corrupti et ut aut laborum repellendus esse saepe corporis aut.",
+          "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
+          "id": "0"
+        },
         {
           createdAt: "2021-07-24T21:56:57.780Z",
           author: "Al Hoeger IV",
@@ -176,27 +188,9 @@
           "author": "Lowell Little",
           "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
           "thumbnail": "https://www.nordicrose.net/content/images/2020/03/offf-barcelona.jpg",
-          "title": "Corrupti corporis aut.",
-          "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
-          "id": "14"
-        },
-        {
-          "createdAt": "2020-10-07T05:49:56.847Z",
-          "author": "Lowell Little",
-          "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
-          "thumbnail": "https://giphy.com/embed/9DJCR3ZI69yVp2u6uQ/video",
-          "title": "repellendus esse saepe corporis aut.",
-          "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
-          "id": "15"
-        },
-        {
-          "createdAt": "2020-10-07T05:49:56.847Z",
-          "author": "Lowell Little",
-          "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
-          "thumbnail": "https://media.giphy.com/media/RJOqH3lewU5LKJkDVd/giphy.gif",
           "title": "Corrupti et ut aut laborum repellendus esse saepe corporis aut.",
           "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
-          "id": "16"
+          "id": "14"
         },
       ]
 export default {
@@ -243,7 +237,7 @@ $black: #000000;
     margin: 0 auto;
     width: 80%;
     font-size: 3rem;
-    font-weight: bold;
+    font-weight: 700;
   }
   .mainPic {
     width: 900px;
@@ -253,19 +247,29 @@ $black: #000000;
 }
 .blogs h3 {
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: 700;
   transform: translate(0px, 50px);
 }
 .grid2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   cursor: pointer;
-  p {
-    width: 80%;
-    margin: 0 auto;
-    padding: 5px;
-    font-size: 1.375rem;
-    font-weight: 500;
+  div {
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    transition-duration: 0.3s;
+    &:hover {
+      transform: scale(1.06);
+      transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+      color: green;
+    }
+    p {
+      width: 80%;
+      margin: 0 auto;
+      padding: 5px;
+      font-size: 1.375rem;
+      font-weight: 500;
+    }
   }
 }
 .blogContent {
