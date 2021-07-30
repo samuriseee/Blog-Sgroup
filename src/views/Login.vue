@@ -59,7 +59,7 @@ export default {
           console.log(user);
           this.$router.push({ name: "Home" });
         } catch (error) {
-          console.log(error);
+          this.error = messageRespone.AUTHENTICATION.INCORRECT_ACCOUNT;
         }
       }
     },
