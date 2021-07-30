@@ -10,8 +10,10 @@
         <input type="password" v-model="password" placeholder="Password" />
         <a class="text-decoration-none text-muted" href="#">Forgot password?</a>
         <input type="submit" name="" value="Login" href="#" />
-        <a class="text-decoration-none text-primary mb-2" href="/register"
-          >Sign up</a
+        <router-link
+          class="text-decoration-none text-primary mb-2"
+          to="/register"
+          >Sign up</router-link
         >
         <div class="col-md-12">
           <ul class="social-network social-circle">
