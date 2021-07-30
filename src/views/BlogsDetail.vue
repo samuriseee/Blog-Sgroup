@@ -9,7 +9,7 @@
     <!-- full width image  -->
     <figure class="full-width">
       <img
-        :src="blogs[$route.params.id - 1].thumbnail"
+        :src="blogs[$route.params.id].thumbnail"
       /> 
     </figure>
     <!-- below image  -->
@@ -17,11 +17,11 @@
       <!-- author information -->
       <div class="author">
         <div class="text">
-          <img :src="blogs[$route.params.id - 1].avatar" alt="" />
+          <img :src="blogs[$route.params.id].avatar" alt="" />
           <div>
-            <p>{{ blogs[$route.params.id - 1].author }}</p>
+            <p>{{ blogs[$route.params.id].author }}</p>
             <span style="opacity: 0.8"
-              >{{ blogs[$route.params.id - 1].createdAt }}.4 min read</span
+              >{{ blogs[$route.params.id].createdAt }}.4 min read</span
             >
           </div>
         </div>
@@ -32,18 +32,31 @@
       </div>
       <!-- main content  -->
       <main>
-        <p>{{ blogs[$route.params.id - 1].content }}</p>
+        <p>{{ blogs[$route.params.id].content }}</p>
         <p
           style="font-size: 2rem; padding: 40px 0px 20px 0px; font-weight: 700"
         >
           Next on the pipeline
         </p>
-        <p>{{ blogs[$route.params.id - 1].content }}</p>
+        <p>{{ blogs[$route.params.id].content }}</p>
         <img src="https://www.linkpicture.com/q/angle.jpg" alt="" />
-        <p>{{ blogs[$route.params.id - 1].content }}</p>
-        <p>{{ blogs[$route.params.id - 1].content }}</p>
+        <p>{{ blogs[$route.params.id].content }}</p>
+        <p>{{ blogs[$route.params.id].content }}</p>
       </main>
       <postBottom />
+      <!-- furtherReading -->
+      <div class="wrapper">
+          <div
+              v-for="blog in blogs"
+              :key="'blog-' + blog.id"
+              @click="$router.push('/blogs/' + blog.id)"
+          >
+          <article>
+              <img :src="blog.thumbnail" />
+              <p>{{ blog.title }}</p>
+          </article>
+          </div>
+      </div>
     </div>
   </div>
 </template>
@@ -59,7 +72,16 @@ export default {
     return {
       blogs: [
         {
-          createdAt: "2021-07-24T21:56:57.780Z",
+          "createdAt": "2020-10-07T05",
+          "author": "Lowell Little",
+          "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
+          "thumbnail": "https://media.giphy.com/media/RJOqH3lewU5LKJkDVd/giphy.gif",
+          "title": "Corrupti et ut aut laborum repellendus esse saepe corporis aut.",
+          "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
+          "id": "0"
+        },
+        {
+          createdAt: "2021-07-24T21",
           author: "Al Hoeger IV",
           avatar: "https://cdn.fakercloud.com/avatars/plbabin_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/05/design-system.gif",
@@ -69,7 +91,7 @@ export default {
           id: "1",
         },
         {
-          createdAt: "2021-07-24T19:24:53.998Z",
+          createdAt: "2021-07-24T19:24",
           author: "Sabrina Grady",
           avatar: "https://cdn.fakercloud.com/avatars/falconerie_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/05/benefits-of-not-choosing-your-characters-wisely.gif",
@@ -79,7 +101,7 @@ export default {
           id: "2",
         },
         {
-          createdAt: "2021-07-25T07:22:56.760Z",
+          createdAt: "2021-07-25T07",
           author: "Clinton Romaguera",
           avatar: "https://cdn.fakercloud.com/avatars/davidbaldie_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/05/horrors-of-remote-work.gif",
@@ -90,7 +112,7 @@ export default {
           id: "3",
         },
         {
-          createdAt: "2021-07-25T12:38:42.765Z",
+          createdAt: "2021-07-25T12",
           author: "Hope Lebsack MD",
           avatar: "https://cdn.fakercloud.com/avatars/brandonburke_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/05/someone-shared-a-google-doc.gif",
@@ -100,7 +122,7 @@ export default {
           id: "4",
         },
         {
-          createdAt: "2021-07-25T12:47:28.528Z",
+          createdAt: "2021-07-25T12",
           author: "Guy Mraz",
           avatar: "https://cdn.fakercloud.com/avatars/andrewofficer_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/05/Remote-design-sprint-figma.png",
@@ -110,7 +132,7 @@ export default {
           id: "5",
         },
         {
-          createdAt: "2021-07-25T07:58:04.873Z",
+          createdAt: "2021-07-25T07",
           author: "Rita Kilback",
           avatar: "https://cdn.fakercloud.com/avatars/n_tassone_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/05/six-findings-from-director-level-interviews-on-remote-work-1.gif",
@@ -120,7 +142,7 @@ export default {
           id: "6",
         },
         {
-          createdAt: "2021-07-24T22:28:05.664Z",
+          createdAt: "2021-07-24T22",
           author: "Glen Vandervort",
           avatar: "https://cdn.fakercloud.com/avatars/carlosm_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/04/benefits-of-distributed-teams.gif",
@@ -130,7 +152,7 @@ export default {
           id: "7",
         },
         {
-          createdAt: "2021-07-24T23:04:29.995Z",
+          createdAt: "2021-07-24T23",
           author: "Eric Gutkowski",
           avatar: "https://cdn.fakercloud.com/avatars/jmillspaysbills_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/04/career-growth-distributed-team.gif",
@@ -141,7 +163,7 @@ export default {
           id: "8",
         },
         {
-          createdAt: "2021-07-25T06:49:27.965Z",
+          createdAt: "2021-07-25T06",
           author: "Ervin Swift I",
           avatar: "https://cdn.fakercloud.com/avatars/nemanjaivanovic_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/03/figma-blog-template-for-free-2.gif",
@@ -152,7 +174,7 @@ export default {
           id: "9",
         },
         {
-          createdAt: "2021-07-25T08:58:58.778Z",
+          createdAt: "2021-07-25T08",
           author: "Kristina Koepp",
           avatar: "https://cdn.fakercloud.com/avatars/iqonicd_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/03/modern-remote-working-tools.gif",
@@ -162,7 +184,7 @@ export default {
           id: "10",
         },
         {
-          createdAt: "2021-07-25T00:45:11.934Z",
+          createdAt: "2021-07-25T00",
           author: "Norman Jerde I",
           avatar: "https://cdn.fakercloud.com/avatars/fiterik_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/03/remote-work-distributed-teams-sources.gif",
@@ -172,7 +194,7 @@ export default {
           id: "11",
         },
         {
-          createdAt: "2021-07-25T07:03:56.247Z",
+          createdAt: "2021-07-25T07",
           author: "Tyrone Hoeger Jr.",
           avatar: "https://cdn.fakercloud.com/avatars/russell_baylis_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/03/hello2.gif",
@@ -182,7 +204,7 @@ export default {
           id: "12",
         },
         {
-          "createdAt": "2021-06-05T16:51:44.780Z",
+          "createdAt": "2021-06-05T16",
           "author": "Ms. Sidney Gottlieb",
           "avatar": "https://cdn.fakercloud.com/avatars/wikiziner_128.jpg",
           "thumbnail": "https://www.nordicrose.net/content/images/2020/03/ghost-figma-publishing-cms-design.gif",
@@ -191,31 +213,13 @@ export default {
           "id": "13"
         },
         {
-          "createdAt": "2020-10-07T05:49:56.847Z",
+          "createdAt": "2020-10-07T05",
           "author": "Lowell Little",
           "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
           "thumbnail": "https://www.nordicrose.net/content/images/2020/03/offf-barcelona.jpg",
           "title": "Corrupti et ut aut laborum repellendus esse saepe corporis aut.",
           "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
           "id": "14"
-        },
-        {
-          "createdAt": "2020-10-07T05:49:56.847Z",
-          "author": "Lowell Little",
-          "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
-          "thumbnail": "https://giphy.com/embed/9DJCR3ZI69yVp2u6uQ/video",
-          "title": "Corrupti et ut aut laborum repellendus esse saepe corporis aut.",
-          "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
-          "id": "15"
-        },
-        {
-          "createdAt": "2020-10-07T05:49:56.847Z",
-          "author": "Lowell Little",
-          "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
-          "thumbnail": "https://media.giphy.com/media/RJOqH3lewU5LKJkDVd/giphy.gif",
-          "title": "Corrupti et ut aut laborum repellendus esse saepe corporis aut.",
-          "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
-          "id": "16"
         },
       ],
     };
@@ -234,6 +238,10 @@ $black: #000000;
     width: 80%;
     font-size: 3rem;
     font-weight: bold;
+    @media only screen and (min-width: 300px) and (max-width: 780px) {
+      font-size:2rem;
+      width:100%;
+    }
   }
 }
 .full-width {
@@ -258,10 +266,15 @@ figure {
   justify-content: space-between;
   padding-top: 10px;
   border-top: 2px solid $black;
+  @media only screen and (min-width: 300px) and (max-width: 780px){
+    flex-direction: column;
+  }
   .text {
     display: flex;
     align-items: center;
     img {
+      width:100px;
+      height:100px;
       border-radius: 50%;
     }
     div {
@@ -277,16 +290,35 @@ figure {
   .socialButton {
     display: flex;
     align-items: center;
+    @media only screen and (min-width: 300px) and (max-width: 780px){
+      padding-top: 20px;
+      margin:0 auto;
+    }
     div {
       width: 80px;
       height: 50px;
-      font-size: 25px;
-      box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+      font-size: 20px;
+      border: 1px solid #eaeaea;
+      box-shadow: 0 1px 4px rgb(0 0 0 / 8%);
+      border-radius: 4px;
       align-items: center;
       display: flex;
       justify-content: center;
       cursor: pointer;
+      transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      &:nth-child(1):hover {
+        background: #4267B2;
+        color: $white;
+      }
+      &:nth-child(2):hover {
+        background: #00acee;
+        color: $white;
+      }
+      @media only screen and (min-width: 300px) and (max-width: 780px){
+        width: 140px;
+      }
     }
+    
   }
 }
 
@@ -304,6 +336,43 @@ figure {
     padding: 30px 0px;
     width: 80%;
     margin: 0 auto;
+    @media only screen and (min-width: 300px) and (max-width: 780px) {
+      font-size:1rem;
+    }
   }
 }
+.wrapper{
+  width: 100%;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  @media only screen and (min-width: 300px) and (max-width: 575px) {
+    grid-template-columns: 1fr ;
+  }
+  @media only screen and (min-width: 576px) and (max-width: 1029px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  article{
+    cursor: pointer;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    transition-duration: 0.5s;
+    &:hover{
+      transform: scale(1.06);
+      transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+      color: green;
+    }
+    img {
+      width: 90%;
+      height: 240px;
+      margin: 70px 0px 10px 0px;
+    }
+    p {
+      font-weight: 650px;
+      width:80%;
+      margin: 0 auto;
+      padding:10px;
+    }
+  }
+}
+
 </style>

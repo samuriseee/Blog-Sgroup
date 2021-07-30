@@ -52,6 +52,13 @@ $black: #000000;
     text-transform: uppercase;
     font-family: "Imperator", sans-serif;
     cursor: pointer;
+    @media only screen and (min-width: 200px) and (max-width: 500px) {
+      display:none;
+    }
+    @media only screen and (min-width: 510px) and (max-width: 1000px) {
+      font-size: 2rem;
+      padding: 5px;
+    }
   }
   a {
     font-weight: bold;

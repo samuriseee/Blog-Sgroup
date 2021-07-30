@@ -2,23 +2,26 @@
   <div class="container">
     <img src="https://www.nordicrose.net/content/images/2020/06/enable-focus-mode-gregorian-chant.gif" class="mainPic" />
     <h1>
-      A few words about this blog platform. Ghost, and how this site was made
+      Enable your focus mode by immersive Gregorian chants from the 17th century
     </h1>
-    <span style="font-size: 1.3rem"
-      >Why Ghost ($ Figma) instead of Medium, WordPress or other options?</span
-    >
+    <p style="font-size: 1.4rem;width:60%;margin:0 auto;"
+      >At some point, all instrumental music aiming for increasing focus starts to feel tedious. Classical piano, mellow beats, electronic music in general, even the Tibetan bowls, white noise and binaural beats become numb.
+      </p>
     <div class="blogs">
       <h3>All articles</h3>
+      
       <div class="grid2">
-        <div
-          v-for="blog in paginatedItems"
-          :key="'blog-' + blog.id"
-          class="blogContent"
-          @click="$router.push('/blogs/' + blog.id)"
-        >
-          <img :src="blog.thumbnail" />
-          <p>{{ blog.title }}</p>
-        </div>
+          <div
+            v-for="blog in paginatedItems"
+            :key="'blog-' + blog.id"
+            class="blogContent"
+            @click="$router.push('/blogs/' + blog.id)"
+          >
+            
+            <img :src="blog.thumbnail" />
+            <p>{{ blog.title }}</p>
+          
+      </div>
       </div>
         <b-row>
           <b-col class="mt-3">
@@ -40,7 +43,16 @@
 <script>
   const blogs = [
         {
-          createdAt: "2021-07-24T21:56:57.780Z",
+          "createdAt": "2020-10-07T05",
+          "author": "Lowell Little",
+          "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
+          "thumbnail": "https://media.giphy.com/media/RJOqH3lewU5LKJkDVd/giphy.gif",
+          "title": "Corrupti et ut aut laborum repellendus esse saepe corporis aut.",
+          "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
+          "id": "0"
+        },
+        {
+          createdAt: "2021-07-24T21",
           author: "Al Hoeger IV",
           avatar: "https://cdn.fakercloud.com/avatars/plbabin_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/05/design-system.gif",
@@ -50,7 +62,7 @@
           id: "1",
         },
         {
-          createdAt: "2021-07-24T19:24:53.998Z",
+          createdAt: "2021-07-24T19:24",
           author: "Sabrina Grady",
           avatar: "https://cdn.fakercloud.com/avatars/falconerie_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/05/benefits-of-not-choosing-your-characters-wisely.gif",
@@ -60,7 +72,7 @@
           id: "2",
         },
         {
-          createdAt: "2021-07-25T07:22:56.760Z",
+          createdAt: "2021-07-25T07",
           author: "Clinton Romaguera",
           avatar: "https://cdn.fakercloud.com/avatars/davidbaldie_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/05/horrors-of-remote-work.gif",
@@ -71,7 +83,7 @@
           id: "3",
         },
         {
-          createdAt: "2021-07-25T12:38:42.765Z",
+          createdAt: "2021-07-25T12",
           author: "Hope Lebsack MD",
           avatar: "https://cdn.fakercloud.com/avatars/brandonburke_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/05/someone-shared-a-google-doc.gif",
@@ -81,7 +93,7 @@
           id: "4",
         },
         {
-          createdAt: "2021-07-25T12:47:28.528Z",
+          createdAt: "2021-07-25T12",
           author: "Guy Mraz",
           avatar: "https://cdn.fakercloud.com/avatars/andrewofficer_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/05/Remote-design-sprint-figma.png",
@@ -91,7 +103,7 @@
           id: "5",
         },
         {
-          createdAt: "2021-07-25T07:58:04.873Z",
+          createdAt: "2021-07-25T07",
           author: "Rita Kilback",
           avatar: "https://cdn.fakercloud.com/avatars/n_tassone_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/05/six-findings-from-director-level-interviews-on-remote-work-1.gif",
@@ -101,7 +113,7 @@
           id: "6",
         },
         {
-          createdAt: "2021-07-24T22:28:05.664Z",
+          createdAt: "2021-07-24T22",
           author: "Glen Vandervort",
           avatar: "https://cdn.fakercloud.com/avatars/carlosm_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/04/benefits-of-distributed-teams.gif",
@@ -111,7 +123,7 @@
           id: "7",
         },
         {
-          createdAt: "2021-07-24T23:04:29.995Z",
+          createdAt: "2021-07-24T23",
           author: "Eric Gutkowski",
           avatar: "https://cdn.fakercloud.com/avatars/jmillspaysbills_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/04/career-growth-distributed-team.gif",
@@ -122,7 +134,7 @@
           id: "8",
         },
         {
-          createdAt: "2021-07-25T06:49:27.965Z",
+          createdAt: "2021-07-25T06",
           author: "Ervin Swift I",
           avatar: "https://cdn.fakercloud.com/avatars/nemanjaivanovic_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/03/figma-blog-template-for-free-2.gif",
@@ -133,7 +145,7 @@
           id: "9",
         },
         {
-          createdAt: "2021-07-25T08:58:58.778Z",
+          createdAt: "2021-07-25T08",
           author: "Kristina Koepp",
           avatar: "https://cdn.fakercloud.com/avatars/iqonicd_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/03/modern-remote-working-tools.gif",
@@ -143,7 +155,7 @@
           id: "10",
         },
         {
-          createdAt: "2021-07-25T00:45:11.934Z",
+          createdAt: "2021-07-25T00",
           author: "Norman Jerde I",
           avatar: "https://cdn.fakercloud.com/avatars/fiterik_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/03/remote-work-distributed-teams-sources.gif",
@@ -153,7 +165,7 @@
           id: "11",
         },
         {
-          createdAt: "2021-07-25T07:03:56.247Z",
+          createdAt: "2021-07-25T07",
           author: "Tyrone Hoeger Jr.",
           avatar: "https://cdn.fakercloud.com/avatars/russell_baylis_128.jpg",
           thumbnail: "https://www.nordicrose.net/content/images/2020/03/hello2.gif",
@@ -163,7 +175,7 @@
           id: "12",
         },
         {
-          "createdAt": "2021-06-05T16:51:44.780Z",
+          "createdAt": "2021-06-05T16",
           "author": "Ms. Sidney Gottlieb",
           "avatar": "https://cdn.fakercloud.com/avatars/wikiziner_128.jpg",
           "thumbnail": "https://www.nordicrose.net/content/images/2020/03/ghost-figma-publishing-cms-design.gif",
@@ -172,31 +184,13 @@
           "id": "13"
         },
         {
-          "createdAt": "2020-10-07T05:49:56.847Z",
+          "createdAt": "2020-10-07T05",
           "author": "Lowell Little",
           "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
           "thumbnail": "https://www.nordicrose.net/content/images/2020/03/offf-barcelona.jpg",
-          "title": "Corrupti corporis aut.",
-          "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
-          "id": "14"
-        },
-        {
-          "createdAt": "2020-10-07T05:49:56.847Z",
-          "author": "Lowell Little",
-          "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
-          "thumbnail": "https://giphy.com/embed/9DJCR3ZI69yVp2u6uQ/video",
-          "title": "repellendus esse saepe corporis aut.",
-          "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
-          "id": "15"
-        },
-        {
-          "createdAt": "2020-10-07T05:49:56.847Z",
-          "author": "Lowell Little",
-          "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
-          "thumbnail": "https://media.giphy.com/media/RJOqH3lewU5LKJkDVd/giphy.gif",
           "title": "Corrupti et ut aut laborum repellendus esse saepe corporis aut.",
           "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
-          "id": "16"
+          "id": "14"
         },
       ]
 export default {
@@ -243,34 +237,50 @@ $black: #000000;
     margin: 0 auto;
     width: 80%;
     font-size: 3rem;
-    font-weight: bold;
+    font-weight: 700;
+    @media only screen and (min-width: 300px) and (max-width: 780px) {
+      font-size:2rem;
+      width:100%;
+    }
   }
   .mainPic {
-    width: 900px;
-    height: 600px;
+    width: 80%;
     margin: 70px 0px;
   }
 }
 .blogs h3 {
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: 700;
   transform: translate(0px, 50px);
 }
 .grid2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   cursor: pointer;
-  p {
-    width: 80%;
-    margin: 0 auto;
-    padding: 5px;
-    font-size: 1.375rem;
-    font-weight: 500;
+  @media only screen and (min-width: 300px) and (max-width: 780px){
+    grid-template-columns: 1fr;
+  }
+  div {
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    transition-duration: 0.3s;
+    &:hover {
+      transform: scale(1.06);
+      transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+      color: green;
+    }
+    p {
+      width: 80%;
+      margin: 0 auto;
+      padding: 5px;
+      font-size: 1.375rem;
+      font-weight: 500;
+    }
   }
 }
 .blogContent {
   img {
-    width: 380px;
+    width: 90%;
     height: 240px;
     margin: 70px 0px 10px 0px;
   }
