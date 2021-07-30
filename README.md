@@ -1,4 +1,4 @@
-deploy link : BlogFirebase.surge.sh
+deploy link : https://deploy-preview-8--vibrant-hawking-e9841b.netlify.app/
 # blog-sgroup
 
 ## Project setup
