@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+// import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register";
 import firebase from "firebase/app";
@@ -19,12 +19,12 @@ const routes = [
     name: "Register",
     component: Register,
   },
-  {
-    path: "/",
-    name: "Home",
-    component: Home,
-    meta: { requireAuth: true },
-  },
+  // {
+  //   path: "/",
+  //   name: "Home",
+  //   component: Home,
+  //   meta: { requireAuth: true },
+  // },
   {
     path: "/about",
     name: "About",
@@ -43,6 +43,7 @@ const routes = [
   {
     path: "/blogs/:id",
     component: () => import("../views/BlogsDetail.vue"),
+    meta: { requireAuth: true },
   },
 ];
 
