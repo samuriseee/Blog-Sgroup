@@ -62,9 +62,9 @@ export default {
         {
           id: "3",
           title: "Lorem Ipsum",
-          image2: "https://media.giphy.com/media/gghYespvi7bBL6hsab/giphy.gif",
+          image: "https://media.giphy.com/media/gghYespvi7bBL6hsab/giphy.gif",
           image1: "https://media.giphy.com/media/YewmDPD4ymnaQTkEFM/giphy.gif",
-          image: "https://media.giphy.com/media/H3N6RzQQhjii7wlfIW/giphy.gif",
+          image2: "https://media.giphy.com/media/H3N6RzQQhjii7wlfIW/giphy.gif",
           content:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
         },
@@ -77,6 +77,7 @@ export default {
 <style lang="scss" scoped>
 $white: #fffefe;
 $black: #000000;
+$yellow:#FFD900;
 .aboutContent {
   width: 90%;
   background-color: $black;
@@ -92,7 +93,7 @@ $black: #000000;
 .aboutContent::before {
   content: "";
   position: absolute;
-  background-color: $white;
+  background-color: $yellow;
   bottom: 0;
   left: 10%;
   width: 10px;
@@ -102,7 +103,7 @@ $black: #000000;
 .aboutContent::after {
   content: "";
   position: absolute;
-  background-color: $white;
+  background-color: $yellow;
   top: 0;
   right: 15%;
   width: 10px;
@@ -117,27 +118,41 @@ $black: #000000;
 }
 .aboutContent img {
   width: 40%;
- 
+  
 }
 .section1 {
   width: 80%;
   margin: 0 auto;
   display: flex;
   align-items: center;
+  @media only screen and (min-width: 300px) and (max-width: 780px) {
+    display:none;
+  }
 }
 .section1 .text p {
   font-size: 1.5rem;
   width: 100%;
+  @media only screen and (min-width: 300px) and (max-width: 780px) {
+    font-size:1rem;
+  }
 }
 .section2 {
   position: relative;
   top: -50px;
   text-align: center;
+  img {
+    @media only screen and (min-width: 300px) and (max-width: 780px) {
+    width:100%;
+  }
+  }
 }
 .section2 .text p {
   font-size: 1.5rem;
   width: 50%;
   margin: 0 auto;
+  @media only screen and (min-width: 300px) and (max-width: 780px) {
+    font-size:1rem;
+  }
 }
 .section3 {
   width: 80%;
@@ -146,11 +161,17 @@ $black: #000000;
 }
 .section3 .text p {
   font-size: 1.5rem;
-  width: 50%;
+  width: 100%;
+  @media only screen and (min-width: 300px) and (max-width: 780px) {
+    font-size:1rem;
+  }
 }
 .section3 .gallery {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+  @media only screen and (min-width: 300px) and (max-width: 780px) {
+    font-size:1rem;
+  }
 }
 .section3 .gallery img {
   width:100%;

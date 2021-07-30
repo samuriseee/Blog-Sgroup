@@ -41,7 +41,7 @@ $black: #000000;
     text-transform: uppercase;
     font-family: "Imperator", sans-serif;
     cursor: pointer;
-    @media only screen and (min-width: 374px) and (max-width: 500px) {
+    @media only screen and (min-width: 200px) and (max-width: 500px) {
       display:none;
     }
     @media only screen and (min-width: 510px) and (max-width: 1000px) {
