@@ -12,7 +12,7 @@
         <input type="submit" name="" value="Login" href="#" />
         <router-link
           class="text-decoration-none text-primary mb-2"
-          to="/register"
+          :to="{ name: 'Register' }"
           >Sign up</router-link
         >
         <div class="col-md-12">
@@ -58,8 +58,8 @@ export default {
           const user = await firebase
             .auth()
             .signInWithEmailAndPassword(this.email, this.password);
-          console.log(user);
-          this.$router.push({ name: "Home" });
+          console.log("user", user);
+          this.$router.push({ name: "About" });
         } catch (error) {
           this.error = messageRespone.AUTHENTICATION.INCORRECT_ACCOUNT;
         }

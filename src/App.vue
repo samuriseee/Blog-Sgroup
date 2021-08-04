@@ -11,12 +11,22 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import defaultLayout from "./layout/default.vue";
 import unauthLayout from "./layout/unauth.vue";
+import firebase from "firebase/app";
+import "firebase/auth";
 export default {
   components: {
     defaultLayout,
     unauthLayout,
+  },
+  created() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.getCurrentUser();
+      }
+    });
   },
   computed: {
     layout() {
@@ -25,12 +35,14 @@ export default {
         : "defaultLayout";
     },
   },
+  methods: {
+    ...mapActions(["getCurrentUser"]),
+  },
 };
 </script>
 <style lang="scss">
-
 #app {
-  font-family: 'Harriet Text', sans-serif;
+  font-family: "Harriet Text", sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -41,4 +53,3 @@ export default {
   color: #42b983;
 }
 </style>
-

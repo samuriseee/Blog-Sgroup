@@ -41,6 +41,7 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import messageRespone from "../services/authentication/responseMessage";
+import db from "../firebase/firebaseInit";
 export default {
   data() {
     return {
@@ -54,10 +55,14 @@ export default {
     async submitData() {
       if ((await this.validation()) === true) {
         try {
-          const user = firebase
+          const users = firebase
             .auth()
             .createUserWithEmailAndPassword(this.email, this.password);
-          console.log(user);
+          const result = await users;
+          const database = db.collection("users").doc(result.user.uid);
+          await database.set({
+            email: this.email,
+          });
           this.$router.push({ name: "Home" });
         } catch (error) {
           console.log(error);

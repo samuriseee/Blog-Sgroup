@@ -23,6 +23,19 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 export default {
+  data() {
+    return {
+      user: null,
+    };
+  },
+  created() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.user = user;
+        console.log(this.user);
+      }
+    });
+  },
   methods: {
     async signOut() {
       try {
@@ -53,7 +66,7 @@ $black: #000000;
     font-family: "Imperator", sans-serif;
     cursor: pointer;
     @media only screen and (min-width: 200px) and (max-width: 500px) {
-      display:none;
+      display: none;
     }
     @media only screen and (min-width: 510px) and (max-width: 1000px) {
       font-size: 2rem;
