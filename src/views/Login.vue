@@ -8,11 +8,13 @@
         </div>
         <input type="text" v-model="email" placeholder="Email" />
         <input type="password" v-model="password" placeholder="Password" />
-        <a class="text-decoration-none text-muted" href="/reset-password">Forgot password?</a>
+        <router-link class="text-decoration-none text-muted"  to="/reset-password">Forgot password?</router-link>
         <input type="submit" name="" value="Login" href="#" />
-        <a class="text-decoration-none text-primary mb-2" href="/register"
-          >Dont have a account? <span>Register here</span> </a
-        >
+         <router-link
+          class="text-decoration-none text-primary mb-2"
+          to="/register"
+          >Dont have a account? <span>Register here</span> </router-link>
+        
         <div class="col-md-12">
           <ul class="social-network social-circle">
             <li>
