@@ -42,8 +42,9 @@ $black: #000000;
 #nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
   margin: 0 auto;
+  padding: 15px 50px 0;
   border-bottom: 1px solid #c6c6c6;
   height: 100px;
   .logo {
@@ -89,5 +90,9 @@ li {
   a {
     height: 100%;
   }
+}
+.nav-link .dropdown-toggle {
+  color: #000 !important;
+  font-size: 1.2rem !important;
 }
 </style>

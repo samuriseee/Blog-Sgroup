@@ -168,9 +168,9 @@ $yellow:#FFD900;
 }
 .section3 .gallery {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   @media only screen and (min-width: 300px) and (max-width: 780px) {
-    font-size:1rem;
+    grid-template-columns: 1fr;
   }
 }
 .section3 .gallery img {

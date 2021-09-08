@@ -184,13 +184,13 @@
           "id": "13"
         },
         {
-          "createdAt": "2020-10-07T05",
-          "author": "Lowell Little",
-          "avatar": "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
-          "thumbnail": "https://www.nordicrose.net/content/images/2020/03/offf-barcelona.jpg",
-          "title": "Corrupti et ut aut laborum repellendus esse saepe corporis aut.",
-          "content": "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
-          "id": "14"
+          createdAt: "2020-10-07T05",
+          author: "Lowell Little",
+          avatar: "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
+          thumbnail: "https://www.nordicrose.net/content/images/2020/03/offf-barcelona.jpg",
+          title: "Corrupti et ut aut laborum repellendus esse saepe corporis aut.",
+          content: "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
+          id: "14"
         },
       ]
 export default {
