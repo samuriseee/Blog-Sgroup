@@ -10,11 +10,11 @@
         <input type="password" v-model="password" placeholder="Password" />
         <router-link class="text-decoration-none text-muted"  to="/reset-password">Forgot password?</router-link>
         <input type="submit" name="" value="Login" href="#" />
-         <router-link
+        <router-link
           class="text-decoration-none text-primary mb-2"
           to="/register"
-          >Dont have a account? <span>Register here</span> </router-link>
-        
+          >Sign up</router-link
+        >
         <div class="col-md-12">
           <ul class="social-network social-circle">
             <li>
