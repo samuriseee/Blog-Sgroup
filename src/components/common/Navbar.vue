@@ -3,7 +3,7 @@
     <span class="logo" @click="$router.push('/blogs')">nordic rose</span>
     <ul>
       <li><router-link to="/">Home</router-link></li>
-      <li><router-link to="/blogs">Blog</router-link></li>
+      <li><router-link to="/blogs">Blogs</router-link></li>
       <li><router-link to="/about">About</router-link></li>
       <!-- <li><router-link to="/register">Register</router-link></li>
       <li><router-link to="/login">Login</router-link></li> -->
@@ -71,6 +71,12 @@ export default {
       this.toggleMenu = !this.toggleMenu;
     },
   },
+  mounted() {
+    window.addEventListener("scroll", function () {
+      const nav = document.querySelector("#nav");
+      nav.classList.toggle("sticky", window.scrollY > 0);
+    });
+  }
 };
 </script>
 
@@ -84,7 +90,13 @@ $black: #000000;
   margin: 0 auto;
   padding: 15px 50px 0;
   border-bottom: 1px solid #c6c6c6;
+  background: #fffefe;
   height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
   .logo {
     font-size: 2.5rem;
     padding: 0 5px 10px;
@@ -143,8 +155,8 @@ li {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    color: #fffeff;
-    background-color: #303030;
+    color: #fffefe;
+    background-color: #000000;
     padding: 5px;
     pointer-events: none;
     align-items: center;
@@ -157,16 +169,16 @@ li {
     top: 60px;
     right: 0;
     width: 250px;
-    background: #303030;
+    background: #000000;
     .info {
       display: flex;
       align-items: center;
       padding: 20px;
-      border-bottom: 1px solid #fff;
+      border-bottom: 1px solid #fffefe;
       .initials {
         position: initial;
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
         margin-top: 10px;
         background-color: #fff;
         color: #303030;
@@ -216,5 +228,10 @@ li {
       font-size: 1.5rem !important;
     }
   }
+}
+.sticky {
+  background: #fff;
+  padding: 10px 100px;
+  box-shadow: 0 5px 20px rgb(0, 0, 0, 0.05);
 }
 </style>

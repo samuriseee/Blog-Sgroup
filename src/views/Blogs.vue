@@ -1,18 +1,17 @@
 <template>
   <div class="container">
-    <img
-      src="https://www.nordicrose.net/content/images/2020/06/enable-focus-mode-gregorian-chant.gif"
-      class="mainPic"
-    />
-    <h1>
-      Enable your focus mode by immersive Gregorian chants from the 17th century
-    </h1>
-    <p style="font-size: 1.4rem;width:60%;margin:0 auto;">
-      At some point, all instrumental music aiming for increasing focus starts
-      to feel tedious. Classical piano, mellow beats, electronic music in
-      general, even the Tibetan bowls, white noise and binaural beats become
-      numb.
-    </p>
+    <div @click="$router.push('/blogs/' + 0)" class="firstBlog"> 
+      <img
+        :src="blogs[0].thumbnail"
+        class="mainPic"
+      />
+      <h1>
+        {{blogs[0].title}}
+      </h1>
+      <p style="font-size: 1.4rem;width:60%;margin:0 auto;">
+        {{blogs[0].content}}
+      </p>
+    </div>
     <div class="blogs">
       <h3>All articles</h3>
 
@@ -50,10 +49,12 @@ const blogs = [
     createdAt: "2020-10-07T05",
     author: "Lowell Little",
     avatar: "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
-    thumbnai: "https://media.giphy.com/media/RJOqH3lewU5LKJkDVd/giphy.gif",
-    title: "Corrupti et ut aut laborum repellendus esse saepe corporis aut.",
+    thumbnail:
+      "https://www.nordicrose.net/content/images/2020/06/enable-focus-mode-gregorian-chant.gif",
+    title:
+      "Enable your focus mode by immersive Gregorian chants from the 17th century",
     content:
-      "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
+      "At some point, all instrumental music aiming for increasing focus starts to feel tedious. Classical piano, mellow beats, electronic music in general, even the Tibetan bowls, white noise and binaural beats become numb.",
     id: "0",
   },
   {
@@ -244,6 +245,7 @@ export default {
 $white: #fffefe;
 $black: #000000;
 .container {
+  margin-top: 5rem;
   text-align: center;
   .blogs {
     width: 65%;
@@ -284,7 +286,7 @@ $black: #000000;
     transition-duration: 0.3s;
     &:hover {
       transform: scale(1.06);
-      transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+      transition: 0.3s ease-out;
       color: green;
     }
     p {
@@ -302,5 +304,25 @@ $black: #000000;
     height: 240px;
     margin: 70px 0px 10px 0px;
   }
+}
+.b-pagination-pills .page-item {
+  .page-link {
+    color: #000 !important;
+    border-radius: 50rem !important;
+    margin-left: 0.5rem;
+    line-height: 1;
+    font-size: 1.3rem !important;
+    padding: 20px !important;
+  }
+}
+.firstBlog {
+  cursor: pointer;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    transition-duration: 0.2s;
+    &:hover {
+      transform: scale(1.015);
+      transition: 0.2s ease-in;
+      color: green;
+    }
 }
 </style>
