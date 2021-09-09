@@ -13,6 +13,9 @@
 <script>
 import defaultLayout from "./layout/default.vue";
 import unauthLayout from "./layout/unauth.vue";
+import firebase from "firebase/app";
+import "firebase/auth";
+
 export default {
   components: {
     defaultLayout,
@@ -25,6 +28,14 @@ export default {
         : "defaultLayout";
     },
   },
+  created() {
+    firebase.auth().onAuthStateChanged((user) => {
+      this.$store.commit("updateUser", user);
+      if (user) {
+        this.$store.dispatch("getCurrentUser", user);
+      }
+    });
+  },
 };
 </script>
 <style lang="scss">
@@ -32,6 +43,7 @@ export default {
 #app {
   font-family: 'Harriet Text', sans-serif;
   font-weight: 400;
+  text-align: center;
 }
 .card {
   min-height:100vh;
@@ -45,7 +57,6 @@ export default {
   width: 500px;
   padding: 20px;
   background: #191919;
-  
   flex-direction: column;
   transition: 0.25s;
   border: 1px solid;

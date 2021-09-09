@@ -37,7 +37,8 @@ export default {
     flex-direction: column;
     justify-content: center;
     max-width: 400px;
-    background: #fff;
+    background: #191919 !important;
+    color: #fff;
     border-radius: 16px;
     font-size:1.5rem;
     padding: 25px;
@@ -48,11 +49,13 @@ export default {
       text-align: center;
     }
     button {
-      border: 1px solid black;
+      border: 1px solid #fff;
       border-radius: 17px;
       padding: 10px;
       outline: none;
+      color: #fff;
       align-self: center;
+      background: transparent;
     }
   }
 }

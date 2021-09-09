@@ -7,10 +7,10 @@
           {{ error }}
         </div>
         <input type="text" v-model="firstName" placeholder="First name" />
-        <input type="text" v-model="lastName" placeholder="Last name"/>
-        <input type="text" v-model="username" placeholder="Username"/>
+        <input type="text" v-model="lastName" placeholder="Last name" />
+        <input type="text" v-model="username" placeholder="Username" />
         <input type="text" v-model="email" placeholder="Email" />
-        <input type="password" v-model="password" placeholder="Password"/>
+        <input type="password" v-model="password" placeholder="Password" />
         <input
           type="password"
           v-model="confirmPassword"
@@ -105,5 +105,3 @@ export default {
   },
 };
 </script>
-
-
