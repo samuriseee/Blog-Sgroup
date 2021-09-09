@@ -74,11 +74,11 @@ export default {
           author: "Lowell Little",
           avatar: "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
           thumbnai:
-            "https://media.giphy.com/media/RJOqH3lewU5LKJkDVd/giphy.gif",
+            "https://www.nordicrose.net/content/images/2020/06/enable-focus-mode-gregorian-chant.gif",
           title:
-            "Corrupti et ut aut laborum repellendus esse saepe corporis aut.",
+            "Enable your focus mode by immersive Gregorian chants from the 17th century",
           content:
-            "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
+            "At some point, all instrumental music aiming for increasing focus starts to feel tedious. Classical piano, mellow beats, electronic music in general, even the Tibetan bowls, white noise and binaural beats become numb.",
           id: "0",
         },
         {
@@ -249,7 +249,7 @@ export default {
 $white: #fffefe;
 $black: #000000;
 .container {
-  margin-top: 40px;
+  margin-top: 8rem;
   h1 {
     padding: 16px;
     margin: 0 auto;

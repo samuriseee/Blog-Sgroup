@@ -3,7 +3,8 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Register";
-import ForgotPass from "../views/ForgotPassword.vue"
+import ForgotPass from "../views/ForgotPassword.vue";
+import Profile from "../views/Profile.vue";
 import firebase from "firebase/app";
 import "firebase/auth";
 
@@ -34,6 +35,12 @@ const routes = [
     meta : {
       layout: "LoginLayout"
     },
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: Profile,
+    meta: { requireAuth: true },
   },
   {
     path: "/",
