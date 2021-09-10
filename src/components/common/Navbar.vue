@@ -26,7 +26,7 @@
                 {{ this.$store.state.profileLastName }}
               </p>
               <p>{{ this.$store.state.profileUsername }}</p>
-              <p>{{ this.$store.state.profileEmail }}</p>
+              <p style="font-size:0.7rem">{{ this.$store.state.profileEmail }}</p>
             </div>
           </router-link>
           <div class="profileOptions">
