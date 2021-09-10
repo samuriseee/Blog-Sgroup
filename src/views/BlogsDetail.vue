@@ -73,7 +73,7 @@ export default {
           createdAt: "2020-10-07T05",
           author: "Lowell Little",
           avatar: "https://cdn.fakercloud.com/avatars/aluisio_azevedo_128.jpg",
-          thumbnai:
+          thumbnail:
             "https://www.nordicrose.net/content/images/2020/06/enable-focus-mode-gregorian-chant.gif",
           title:
             "Enable your focus mode by immersive Gregorian chants from the 17th century",
