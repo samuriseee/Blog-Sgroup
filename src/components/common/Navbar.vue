@@ -88,7 +88,7 @@ $black: #000000;
   justify-content: space-between;
   align-items: baseline;
   margin: 0 auto;
-  padding: 15px 50px 0;
+  padding: 0px 50px 0;
   border-bottom: 1px solid #c6c6c6;
   background: #fffefe;
   height: 100px;
@@ -96,7 +96,7 @@ $black: #000000;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 99999;
+  z-index: 99;
   .logo {
     font-size: 2.5rem;
     padding: 0 5px 10px;
