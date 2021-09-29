@@ -9,7 +9,9 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     user: null,
-    profileAdmin: null,
+    createBlogTitle: null,
+    createBlogContent: null,
+    blogPhotoFileURL: null,
     profileEmail: null,
     profileFirstName: null,
     profileLastName: null,
@@ -190,6 +192,20 @@ export default new Vuex.Store({
     ],
   },
   mutations: {
+    newBlogPost(state, payload) {
+      state.createBlogContent = payload;
+      console.log(state.createBlogContent);
+    },
+    updateBlogTitle(state, payload) {
+      state.createBlogTitle = payload;
+      console.log(state.createBlogTitle);
+    },
+    fileNameChange(state,payload) {
+      state.blogPhotoName = payload;
+    },
+    createFileURL(state,payload) {
+      state.blogPhotoFileURL = payload;
+    },
     setProfileInfo(state, doc) {
       state.profileId = doc.id;
       state.profileEmail = doc.data().email;

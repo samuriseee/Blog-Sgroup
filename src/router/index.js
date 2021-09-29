@@ -5,6 +5,8 @@ import Login from "../views/Login.vue";
 import Register from "../views/Register";
 import ForgotPass from "../views/ForgotPassword.vue";
 import Profile from "../views/Profile.vue";
+import CreateBlog from "../views/CreateBlog";
+import BlogPreview from "../views/BlogPreview.vue";
 import firebase from "firebase/app";
 import "firebase/auth";
 
@@ -64,6 +66,18 @@ const routes = [
   {
     path: "/blogs/:id",
     component: () => import("../views/BlogsDetail.vue"),
+    meta: { requireAuth: true },
+  },
+  {
+    path: "/create-blog",
+    name: "createBlog",
+    component: CreateBlog,
+    meta: { requireAuth: true },
+  },
+  {
+    path: "/blog-preview",
+    name: "BlogPreview",
+    component: BlogPreview,
     meta: { requireAuth: true },
   },
 ];

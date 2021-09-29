@@ -5,16 +5,7 @@
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/blogs">Blogs</router-link></li>
       <li><router-link to="/about">About</router-link></li>
-      <!-- <li><router-link to="/register">Register</router-link></li>
-      <li><router-link to="/login">Login</router-link></li> -->
-      <!-- <b-nav-item-dropdown
-        text="User"
-        right
-        class="dropdown d-flex align-items-center"
-      >
-        <b-dropdown-item to="#">Profile</b-dropdown-item>
-        <b-dropdown-item @click="signOut">Sign Out</b-dropdown-item>
-      </b-nav-item-dropdown> -->
+      <li><router-link to="/create-blog">Create Blog</router-link></li>
       <div class="profile" @click="toggleProfileMenu()">
         <span>{{ this.$store.state.profileInitials }}</span>
         <div class="profile-menu" v-show="toggleMenu">
