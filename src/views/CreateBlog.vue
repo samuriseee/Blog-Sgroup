@@ -1,5 +1,11 @@
 <template>
   <div class="container">
+    <Loading v-show="loading" />
+    <Modal
+      v-if="modalActive"
+      :modalMessage="modalMessage"
+      v-on:close-modal="closeModal"
+    />
     <input
       type="text"
       class="titleFullWidth"
@@ -35,6 +41,8 @@
 </template>
 
 <script>
+import Loading from "../components/uncommon/Loading.vue";
+import Modal from "../components/uncommon/Modal.vue";
 import firebase from "firebase/app";
 import "firebase/storage";
 import db from "../firebase/firebaseInit";
@@ -44,9 +52,14 @@ import { quillEditor } from "vue-quill-editor";
 export default {
   components: {
     quillEditor,
+    Loading,
+    Modal,
   },
   data: () => {
     return {
+      loading: null,
+      modalActive: false,
+      modalMessage: "",
       editorOption: {
         debug: "default",
         placeholder: "Write your post here...",
@@ -56,6 +69,16 @@ export default {
     };
   },
   methods: {
+    closeModal() {
+      this.modalActive = !this.modalActive;
+      this.blogID = "";
+      this.createBlogContent = "";
+      this.blogCoverPhoto = "";
+      this.blogCoverPhotoName = "";
+      this.createBlogTitle = "";
+      this.profileId = "";
+      this.date ="";
+    },
     fileChange() {
       this.file = this.$refs.blogPhoto.files[0];
       const fileName = this.file.name;
@@ -63,8 +86,12 @@ export default {
       this.$store.commit("createFileURL", URL.createObjectURL(this.file));
     },
     uploadBlog() {
-      if (this.createBlogTitle.length !== 0 && this.createBlogContent.length !== 0) {
+      if (
+        this.createBlogTitle.length !== 0 &&
+        this.createBlogContent.length !== 0
+      ) {
         if (this.file) {
+          this.loading = true;
           const storageRef = firebase.storage().ref();
           const docRef = storageRef.child(
             `documents/BlogCoverPhotos/${this.$store.state.blogPhotoName}`
@@ -76,6 +103,7 @@ export default {
             },
             (err) => {
               console.log(err);
+              this.loading = false;
             },
             async () => {
               const downloadURL = await docRef.getDownloadURL();
@@ -90,7 +118,11 @@ export default {
                 profileId: this.profileId,
                 date: createdTime,
               });
-              // await this.$store.dispatch("getPost");
+              this.modalMessage =
+                "Your post have succesfully uploaded";
+              this.loading = false;
+              this.modalActive = true;
+              await this.$store.dispatch("getPost");
             }
           );
           return;

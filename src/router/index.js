@@ -80,12 +80,17 @@ const routes = [
     component: BlogPreview,
     meta: { requireAuth: true },
   },
+  
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes,
+  // eslint-disable-next-line
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 , behavior: 'smooth'}
+  }
 });
 
 router.beforeEach((to, from, next) => {
@@ -95,5 +100,6 @@ router.beforeEach((to, from, next) => {
     next("/login");
   } else next();
 });
+
 
 export default router;
