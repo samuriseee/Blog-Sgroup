@@ -13,13 +13,15 @@
       :options="editorOption"
     />
     <div class="mainFunction">
+      <div @click="uploadBlog" class="functionButton">Publish Blog</div>
       <router-link class="functionButton" to="/blog-preview"
         >Post Preview</router-link
       >
       <div class="upload-file">
-        <label for="blog-photo" class="functionButton">Upload Cover Photo</label>
+        <label for="blog-photo" class="functionButton"
+          >Upload Cover Photo</label
+        >
         <input
-          
           type="file"
           ref="blogPhoto"
           id="blog-photo"
@@ -33,6 +35,9 @@
 </template>
 
 <script>
+import firebase from "firebase/app";
+import "firebase/storage";
+import db from "../firebase/firebaseInit";
 import "quill/dist/quill.snow.css";
 import { quillEditor } from "vue-quill-editor";
 
@@ -57,6 +62,43 @@ export default {
       this.$store.commit("fileNameChange", fileName);
       this.$store.commit("createFileURL", URL.createObjectURL(this.file));
     },
+    uploadBlog() {
+      if (this.createBlogTitle.length !== 0 && this.createBlogContent.length !== 0) {
+        if (this.file) {
+          const storageRef = firebase.storage().ref();
+          const docRef = storageRef.child(
+            `documents/BlogCoverPhotos/${this.$store.state.blogPhotoName}`
+          );
+          docRef.put(this.file).on(
+            "state_changed",
+            (snapshot) => {
+              console.log(snapshot);
+            },
+            (err) => {
+              console.log(err);
+            },
+            async () => {
+              const downloadURL = await docRef.getDownloadURL();
+              const createdTime = await Date.now();
+              const dataBase = await db.collection("blogs").doc();
+              await dataBase.set({
+                blogID: dataBase.id,
+                createBlogContent: this.createBlogContent,
+                blogCoverPhoto: downloadURL,
+                blogCoverPhotoName: this.blogCoverPhotoName,
+                createBlogTitle: this.createBlogTitle,
+                profileId: this.profileId,
+                date: createdTime,
+              });
+              // await this.$store.dispatch("getPost");
+            }
+          );
+          return;
+        }
+        return;
+      }
+      return;
+    },
   },
   computed: {
     createBlogTitle: {
@@ -75,6 +117,12 @@ export default {
         this.$store.commit("newBlogPost", payload);
       },
     },
+    profileId() {
+      return this.$store.state.profileId;
+    },
+    blogCoverPhotoName() {
+      return this.$store.state.blogPhotoName;
+    },
   },
 };
 </script>
@@ -90,17 +138,16 @@ export default {
   min-height: 100vh;
 }
 .quill-editor {
-  display:flex;
+  display: flex;
   flex-direction: column;
   width: 100%;
-  height: 50vh;
+  height: 55vh;
   .ql-container {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      overflow: scroll;
-    }
-
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: scroll;
+  }
 }
 .titleFullWidth {
   border: none;
@@ -112,26 +159,27 @@ export default {
   background-color: rgb(12, 12, 12);
   color: #fff;
   width: 100%;
+  font-family: "Basis Grotesque Pro";
 }
 .mainFunction {
-  display:flex;
+  display: flex;
   align-items: center;
-  margin-top:3rem;
-    .functionButton {
-      width: 200px;
-      height:40px;
-      padding: 10px;
-      margin: 15px;
-      border-radius: 10px;
-      font-size:1rem;
-      text-decoration: none;
-      background: rgb(0, 0, 0);
-      color:#fff;
-      cursor:pointer;
-    }
-    span {
-      font-size:1rem;
-    }
+  margin-top: 3rem;
+  font-family: "Basis Grotesque Pro";
+  .functionButton {
+    width: 200px;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-decoration: none;
+    background: rgb(0, 0, 0);
+    color: #fff;
+    cursor: pointer;
+  }
+  span {
+    font-size: 1rem;
+  }
 }
 .upload-file {
   input {
@@ -142,5 +190,4 @@ export default {
     align-self: center;
   }
 }
-
 </style>

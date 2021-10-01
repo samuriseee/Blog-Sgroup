@@ -174,6 +174,7 @@ export default {
   color: rgb(0, 0, 0);
   font-size: 5em;
   line-height: 1.4em;
+  font-family: 'Harriet Text', sans-serif;
 }
 .content .textBox p {
   color: rgb(0, 0, 0);
@@ -190,7 +191,9 @@ export default {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-
+  h2 {
+      font-family: 'Harriet Text', sans-serif;
+    }
   .headerBlog {
     width: 95%;
     height: 300px;
@@ -208,6 +211,7 @@ export default {
       transition: 0.3s ease-out;
       color: green;
     }
+    
   }
   .gridBlog {
     width: 95%;
@@ -233,6 +237,7 @@ export default {
       }
       h2 {
         height: 100px;
+        
       }
       p {
         height:120px;

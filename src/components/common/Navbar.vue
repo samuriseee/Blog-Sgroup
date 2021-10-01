@@ -61,6 +61,12 @@ export default {
     toggleProfileMenu() {
       this.toggleMenu = !this.toggleMenu;
     },
+    toggleNavBarMenu() {
+      const menuToggle = document.querySelector(".menuToggle");
+      const navigation = document.querySelector(".navigation");
+      menuToggle.classList.toggle("active");
+      navigation.classList.toggle("active");
+    },
   },
   mounted() {
     window.addEventListener("scroll", function () {
@@ -101,6 +107,7 @@ $black: #000000;
       font-size: 2rem;
       padding: 5px;
     }
+    
   }
   a {
     font-weight: bold;
@@ -127,7 +134,7 @@ $black: #000000;
 
 li {
   height: 100%;
-
+  font-family: 'Harriet Text', sans-serif;
   a {
     height: 100%;
   }
@@ -220,9 +227,11 @@ li {
     }
   }
 }
+
 .sticky {
   background: #fff;
   padding: 10px 100px;
   box-shadow: 0 5px 20px rgb(0, 0, 0, 0.05);
 }
+
 </style>
