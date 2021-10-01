@@ -9,8 +9,12 @@
     </transition>
   </div>
 </template>
-
+<!-- <link href="http://fonts.cdnfonts.com/css/basis-grotesque-pro" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/imperator" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/harriet-text" rel="stylesheet"> -->\
+  
 <script>
+
 import defaultLayout from "./layout/default.vue";
 import unauthLayout from "./layout/unauth.vue";
 import firebase from "firebase/app";
@@ -38,10 +42,16 @@ export default {
   },
 };
 </script>
+<!-- <link href="http://fonts.cdnfonts.com/css/basis-grotesque-pro" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/imperator" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/harriet-text" rel="stylesheet"> -->
 <style lang="scss">
-
+@import url('http://fonts.cdnfonts.com/css/basis-grotesque-pro');
+@import url('http://fonts.cdnfonts.com/css/imperator');
+@import url('http://fonts.cdnfonts.com/css/harriet-text');
 #app {
-  font-family: 'Harriet Text', sans-serif;
+  // font-family: 'Harriet Text', sans-serif;
+  font-family: 'Basis Grotesque Pro';
   font-weight: 400;
   text-align: center;
   overflow: hidden;

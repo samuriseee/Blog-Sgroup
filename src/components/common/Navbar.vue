@@ -5,16 +5,7 @@
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/blogs">Blogs</router-link></li>
       <li><router-link to="/about">About</router-link></li>
-      <!-- <li><router-link to="/register">Register</router-link></li>
-      <li><router-link to="/login">Login</router-link></li> -->
-      <!-- <b-nav-item-dropdown
-        text="User"
-        right
-        class="dropdown d-flex align-items-center"
-      >
-        <b-dropdown-item to="#">Profile</b-dropdown-item>
-        <b-dropdown-item @click="signOut">Sign Out</b-dropdown-item>
-      </b-nav-item-dropdown> -->
+      <li><router-link to="/create-blog">Create Blog</router-link></li>
       <div class="profile" @click="toggleProfileMenu()">
         <span>{{ this.$store.state.profileInitials }}</span>
         <div class="profile-menu" v-show="toggleMenu">
@@ -70,6 +61,12 @@ export default {
     toggleProfileMenu() {
       this.toggleMenu = !this.toggleMenu;
     },
+    toggleNavBarMenu() {
+      const menuToggle = document.querySelector(".menuToggle");
+      const navigation = document.querySelector(".navigation");
+      menuToggle.classList.toggle("active");
+      navigation.classList.toggle("active");
+    },
   },
   mounted() {
     window.addEventListener("scroll", function () {
@@ -88,7 +85,7 @@ $black: #000000;
   justify-content: space-between;
   align-items: baseline;
   margin: 0 auto;
-  padding: 15px 50px 0;
+  padding: 0px 50px 0;
   border-bottom: 1px solid #c6c6c6;
   background: #fffefe;
   height: 100px;
@@ -96,7 +93,7 @@ $black: #000000;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 99999;
+  z-index: 99;
   .logo {
     font-size: 2.5rem;
     padding: 0 5px 10px;
@@ -110,6 +107,7 @@ $black: #000000;
       font-size: 2rem;
       padding: 5px;
     }
+    
   }
   a {
     font-weight: bold;
@@ -136,7 +134,7 @@ $black: #000000;
 
 li {
   height: 100%;
-
+  font-family: 'Harriet Text', sans-serif;
   a {
     height: 100%;
   }
@@ -229,9 +227,11 @@ li {
     }
   }
 }
+
 .sticky {
   background: #fff;
   padding: 10px 100px;
   box-shadow: 0 5px 20px rgb(0, 0, 0, 0.05);
 }
+
 </style>

@@ -6,14 +6,15 @@
         <div class="textBox">
           <h1>
             Make better<br />
-            coffee
+            coffee 
+            <img src="../assets/Coffee/coffeeIcon.png"/>
           </h1>
           <p style="color:rgb(151, 144, 144); font-size:3rem;">
             why learn how to blog?
           </p>
         </div>
         <div class="imgBox">
-          <img src="../assets/Coffee/Coffee.png" alt="" />
+          <img src="../assets/Coffee/coffee.gif" alt="">
         </div>
       </div>
     </section>
@@ -61,7 +62,6 @@
           <img :src="blogs[4].thumbnail" alt="" />
         </div>
       </div>
-    </div>
     <div class="toBlogs">
       <button>
         <router-link to="/blogs">
@@ -69,11 +69,13 @@
         ></router-link>
       </button>
     </div>
+    </div>
   </div>
 </template>
 
+
 <script>
-// @ is an alias to /src
+
 
 export default {
   name: "Home",
@@ -89,7 +91,7 @@ export default {
             "https://www.nordicrose.net/content/images/2020/03/modern-remote-working-tools.gif",
           title: "Cum quaerat aut laboriosam assumenda.",
           content:
-            "Ullam qui qui et quo voluptas nostrum consequatur dolor qui. Eveniet maxime porro aut et nihil debitis qui non. Modi sint totam cumque illo eos reprehenderit dolore. Harum sint culpa sint. Dolores id ab id amet assumenda. Omnis amet occaecati quidem debitis at autem explicabo quia.\n \rSed ipsum numquam eum ut nemo necessitatibus consequatur praesentium. Doloribus ut sequi. Maiores pariatur soluta qui labore.\n \rQuaerat aut dignissimos voluptatum quod et. Nihil est aliquid beatae ex dolorem aut aliquid. Laboriosam sed quis et error. Quo voluptates repellendus temporibus laborum esse magni omnis illum.",
+            "Ullam qui qui et quo voluptas nostrum consequatur dolor qui. Eveniet maxime porro aut et nihil debitis qui non...",
           id: "10",
         },
         {
@@ -100,7 +102,7 @@ export default {
             "https://www.nordicrose.net/content/images/2020/03/remote-work-distributed-teams-sources.gif",
           title: "Ipsum natus asperiores sit odio.",
           content:
-            "Repellendus omnis aut consectetur molestiae deleniti minus rem. Laboriosam sed sit itaque tempora dolorum cum ipsum quas. Fugit laborum eum et non accusantium et eum. error optio minus ducimus qui aut.",
+            "Repellendus omnis aut consectetur molestiae deleniti minus rem. Laboriosam sed...",
           id: "11",
         },
         {
@@ -111,7 +113,7 @@ export default {
             "https://www.nordicrose.net/content/images/2020/03/hello2.gif",
           title: "Voluptatibus consequatur dolor harum qui.",
           content:
-            "Repellendus omnis aut consectetur molestiae deleniti minus rem. Laboriosam sed sit itaque tempora dolorum cum ipsum quas. Fugit laborum eum et non accusantium et eum. error optio minus ducimus qui aut.",
+            "Repellendus omnis aut consectetur molestiae deleniti minus rem. Laboriosam sed sit itaque tempora dolorum cum ipsum quas. Delectus eius explicabo aut quas atque...",
           id: "12",
         },
         {
@@ -122,7 +124,7 @@ export default {
             "https://www.nordicrose.net/content/images/2020/03/ghost-figma-publishing-cms-design.gif",
           title: "Eos minima est dorel la.",
           content:
-            "Repellendus omnis aut consectetur molestiae deleniti minus rem. Laboriosam sed sit itaque tempora dolorum cum ipsum quas. Fugit laborum eum et non accusantium et eum. error optio minus ducimus qui aut.",
+            "Repellendus omnis aut consectetur molestiae deleniti minus rem. Laboriosam sed sit itaque tempora dolorum cum ipsum quas.",
           id: "13",
         },
         {
@@ -134,7 +136,7 @@ export default {
           title:
             "Corrupti et ut aut laborum repellendus esse saepe corporis aut.",
           content:
-            "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Rerum minus quo cupiditate quos. Ut molestiae ullam qui voluptas nemo aut vel. Totam magni officiis tempore magni qui amet assumenda nostrum. Vel dicta nulla et.\n \rSed ex ipsum numquam dolore alias qui. Et minima sit voluptatem beatae. Omnis voluptate nostrum dolore quis est nam expedita tempora. Corrupti dolorem officia ut numquam ratione debitis et dolores aut. Aut consequatur sunt sunt saepe ipsam sint et velit ab. Dolores magni sed.",
+            "A praesentium voluptas officia occaecati dolor itaque quam. Et minus odit nisi. Delectus eius explicabo aut quas atque.\n \rQuae asperiores ut velit. Nisi aspernatur dolorum nihil quia iure praesentium. Totam magni officiis tempore magni qui amet assumenda nostrum. ",
           id: "14",
         },
       ],
@@ -149,6 +151,7 @@ export default {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  background: rgb(253, 253, 253);
 }
 .content {
   position: relative;
@@ -159,7 +162,7 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: left;
-  background: rgb(253, 253, 253);
+  
 }
 .content .textBox {
   position: relative;
@@ -171,6 +174,7 @@ export default {
   color: rgb(0, 0, 0);
   font-size: 5em;
   line-height: 1.4em;
+  font-family: 'Harriet Text', sans-serif;
 }
 .content .textBox p {
   color: rgb(0, 0, 0);
@@ -181,17 +185,20 @@ export default {
   display: flex;
 }
 .sectionBlog {
-  width: 85%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-
+  h2 {
+      font-family: 'Harriet Text', sans-serif;
+    }
   .headerBlog {
     width: 95%;
     height: 300px;
-    border: 1px solid black;
+    border: 1px solid #a4a3a5;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -204,18 +211,18 @@ export default {
       transition: 0.3s ease-out;
       color: green;
     }
+    
   }
   .gridBlog {
     width: 95%;
     justify-content: center;
     align-items: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display:flex;
     .gridItem {
-      width: 475px;
-      height: 550px;
-      border: 1px solid black;
-      margin: 50px 30px;
+      width: 100%;
+      border: 1px solid #a4a3a5;
+      border-radius: 10px;
+      margin: 20px 0px;
       cursor: pointer;
       transform: perspective(1px) translateZ(0);
       box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -225,18 +232,28 @@ export default {
         transition: 0.3s ease-out;
         color: green;
       }
+      &:nth-child(2) {
+        margin: 0 20px;
+      }
+      h2 {
+        height: 100px;
+        
+      }
+      p {
+        height:120px;
+      }
     }
   }
   .footerBlog {
     width: 95%;
-    border: 1px solid black;
-    margin: 20px;
+    border: 1px solid #a4a3a5;
+    border-radius: 10px;
     cursor: pointer;
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     transition-duration: 0.3s;
     &:hover {
-      transform: scale(1.03);
+      transform: scale(1.02);
       transition: 0.3s ease-out;
       color: green;
     }
@@ -256,14 +273,16 @@ export default {
   }
 }
 .headerBlogImg img {
-  width: 500px;
+  width: 100%;
   height: 300px;
+  border-radius: 10px;
 }
 .gridItem {
   text-align: left;
   img {
     width: 100%;
     height: 250px;
+    border-radius: 10px;
   }
   h2,
   p {
@@ -283,10 +302,12 @@ export default {
   align-items: center;
   text-align: left;
   img {
-    width: 800px;
+    width: 100%;
     height: 700px;
+    border-radius: 10px;
   }
   .footerBlogText {
+    width:60%;
     padding: 20px;
     h2,
     p {
@@ -302,7 +323,7 @@ export default {
   }
 }
 .toBlogs {
-  width: 95%;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   button {
@@ -316,7 +337,6 @@ export default {
     padding: 10px;
     margin: 10px;
     outline: none;
-    border: 1px solid #428bcb;
     box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
     cursor: pointer;
     a {

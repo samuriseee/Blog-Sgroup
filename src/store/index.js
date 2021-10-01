@@ -9,7 +9,9 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     user: null,
-    profileAdmin: null,
+    createBlogTitle: null,
+    createBlogContent: null,
+    blogPhotoFileURL: null,
     profileEmail: null,
     profileFirstName: null,
     profileLastName: null,
@@ -190,6 +192,20 @@ export default new Vuex.Store({
     ],
   },
   mutations: {
+    newBlogPost(state, payload) {
+      state.createBlogContent = payload;
+      console.log(state.createBlogContent);
+    },
+    updateBlogTitle(state, payload) {
+      state.createBlogTitle = payload;
+      console.log(state.createBlogTitle);
+    },
+    fileNameChange(state,payload) {
+      state.blogPhotoName = payload;
+    },
+    createFileURL(state,payload) {
+      state.blogPhotoFileURL = payload;
+    },
     setProfileInfo(state, doc) {
       state.profileId = doc.id;
       state.profileEmail = doc.data().email;
@@ -206,6 +222,16 @@ export default new Vuex.Store({
     updateUser(state, payload) {
       state.user = payload;
     },
+    changeFirstName(state, payload) {
+      state.profileFirstName = payload;
+    },
+    changeLastName(state, payload) {
+      state.profileLastName = payload;
+    },
+    changeUsername(state, payload) {
+      state.profileUsername = payload;
+    },
+    
   },
   actions: {
     async getCurrentUser({ commit }) {
@@ -216,5 +242,14 @@ export default new Vuex.Store({
       commit("setProfileInfo", dbResults);
       commit("setProfileInitials");
     },
+    async updateUserSettings ({ commit, state }) {
+      const dataBase = await db.collection("users").doc(state.profileId);
+      await dataBase.update({
+        firstName: state.profileFirstName,
+        lastName: state.profileLastName,
+        username: state.profileUsername,
+      })
+      commit("setProfileInitials");
+    }
   },
 });
