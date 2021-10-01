@@ -18,6 +18,8 @@ export default new Vuex.Store({
     profileUsername: null,
     profileId: null,
     profileInitials: null,
+    blogPosts:[],
+    blogLoaded: null,
     blogs: [
       {
         createdAt: "2020-10-07T05",
@@ -250,6 +252,25 @@ export default new Vuex.Store({
         username: state.profileUsername,
       })
       commit("setProfileInitials");
-    }
+    },
+    async getPost({ state }) {
+      const dataBase = await db.collection("blogs").orderBy("date", "desc");
+      const dbResults = await dataBase.get();
+      dbResults.forEach((doc) => {
+        if (!state.blogPosts.some((post) => post.blogID === doc.id)) {
+          const data = {
+            blogID: doc.data().blogID,
+            createBlogContent: doc.data().createBlogTitle,
+            blogCoverPhoto: doc.data().blogCoverPhoto,
+            createBlogTitle: doc.data().createBlogTitle,
+            blogDate: doc.data().date,
+            blogCoverPhotoName: doc.data().blogCoverPhotoName,
+          };
+          state.blogPosts.push(data);
+        }
+      });
+      state.postLoaded = true;
+      console.log(state.blogPosts);
+    },
   },
 });

@@ -50,12 +50,13 @@ export default {
     }
     button {
       border: 1px solid #fff;
-      border-radius: 17px;
-      padding: 10px;
+      border-radius: 15px;
+      padding: 5px;
       outline: none;
       color: #fff;
       align-self: center;
       background: transparent;
+      font-size:1.3rem;
     }
   }
 }

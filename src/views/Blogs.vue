@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div @click="$router.push('/blogs/' + 0)" class="firstBlog">
+    <!-- <div @click="$router.push('/blogs/' + 0)" class="firstBlog">
       <img :src="blogs[0].thumbnail" class="mainPic" />
       <h1>
         {{ blogs[0].title }}
@@ -8,19 +8,19 @@
       <p style="font-size: 1.4rem;width:60%;margin:0 auto;">
         {{ blogs[0].content }}
       </p>
-    </div>
+    </div> -->
     <div class="blogs">
       <h3>All articles</h3>
 
       <div class="grid2">
         <div
-          v-for="blog in paginatedItems"
+          v-for="blog in blogPosts"
           :key="'blog-' + blog.id"
           class="blogContent"
           @click="$router.push('/blogs/' + blog.id)"
         >
-          <img :src="blog.thumbnail" />
-          <p>{{ blog.title }}</p>
+          <img :src="blog.blogCoverPhoto" />
+          <p>{{ blog.createBlogTitle }}</p>
         </div>
       </div>
       <b-row>
@@ -213,8 +213,8 @@ const blogs = [
 export default {
   name: "Blogs",
   computed: {
-    blogs() {
-      return this.$store.state.blogs;
+    blogPosts() {
+      return this.$store.state.blogPosts;
     },
   },
   data() {
@@ -225,11 +225,6 @@ export default {
       totalRows: blogs.length,
     };
   },
-  // computed: {
-  //   blogs() {
-  //     return this.$store.state.blogs
-  //   }
-  // },
   methods: {
     paginate(page_size, page_number) {
       let itemsToParse = this.blogs;
