@@ -10,11 +10,11 @@
       type="text"
       class="titleFullWidth"
       placeholder="Enter Blog Title"
-      v-model="createBlogTitle"
+      v-model="blogTitle"
     />
 
     <quill-editor
-      v-model="createBlogContent"
+      v-model="blogContent"
       ref="myQuillEditor"
       :options="editorOption"
     />
@@ -72,12 +72,12 @@ export default {
     closeModal() {
       this.modalActive = !this.modalActive;
       this.blogID = "";
-      this.createBlogContent = "";
+      this.blogContent = "";
       this.blogCoverPhoto = "";
       this.blogCoverPhotoName = "";
-      this.createBlogTitle = "";
+      this.blogTitle = "";
       this.profileId = "";
-      this.date ="";
+      this.date = "";
     },
     fileChange() {
       this.file = this.$refs.blogPhoto.files[0];
@@ -86,10 +86,7 @@ export default {
       this.$store.commit("createFileURL", URL.createObjectURL(this.file));
     },
     uploadBlog() {
-      if (
-        this.createBlogTitle.length !== 0 &&
-        this.createBlogContent.length !== 0
-      ) {
+      if (this.blogTitle.length !== 0 && this.blogContent.length !== 0) {
         if (this.file) {
           this.loading = true;
           const storageRef = firebase.storage().ref();
@@ -111,15 +108,14 @@ export default {
               const dataBase = await db.collection("blogs").doc();
               await dataBase.set({
                 blogID: dataBase.id,
-                createBlogContent: this.createBlogContent,
+                blogContent: this.blogContent,
                 blogCoverPhoto: downloadURL,
                 blogCoverPhotoName: this.blogCoverPhotoName,
-                createBlogTitle: this.createBlogTitle,
+                blogTitle: this.blogTitle,
                 profileId: this.profileId,
                 date: createdTime,
               });
-              this.modalMessage =
-                "Your post have succesfully uploaded";
+              this.modalMessage = "Your post have succesfully uploaded";
               this.loading = false;
               this.modalActive = true;
               await this.$store.dispatch("getPost");
