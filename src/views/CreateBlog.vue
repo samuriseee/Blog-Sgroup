@@ -6,15 +6,21 @@
       :modalMessage="modalMessage"
       v-on:close-modal="closeModal"
     />
+    <div
+      :class="{ invisible: !error }"
+      class="err-message mt-3 mb-3 d-flex align-items-center"
+    >
+      <p><span>Error: </span>{{ this.errorMsg }}</p>
+    </div>
     <input
       type="text"
       class="titleFullWidth"
       placeholder="Enter Blog Title"
-      v-model="createBlogTitle"
+      v-model="blogTitle"
     />
 
     <quill-editor
-      v-model="createBlogContent"
+      v-model="blogContent"
       ref="myQuillEditor"
       :options="editorOption"
     />
@@ -57,6 +63,7 @@ export default {
   },
   data: () => {
     return {
+      file: null,
       loading: null,
       modalActive: false,
       modalMessage: "",
@@ -66,18 +73,27 @@ export default {
         readOnly: true,
         theme: "snow",
       },
+      firstName: "",
+      lastName: "",
+      error: null,
+      errorMsg: null,
     };
+  },
+  created() {
+    this.firstName = this.$store.state.profileFirstName;
+    this.lastName = this.$store.state.profileLastName;
   },
   methods: {
     closeModal() {
       this.modalActive = !this.modalActive;
-      this.blogID = "";
-      this.createBlogContent = "";
+      this.blogContent = "";
+      this.blogPhotoName = "";
       this.blogCoverPhoto = "";
-      this.blogCoverPhotoName = "";
-      this.createBlogTitle = "";
+      this.blogTitle = "";
+      this.$store.state.blogPhotoName = "";
       this.profileId = "";
-      this.date ="";
+      this.date = "";
+      this.$router.push("/blogs/" + this.blogID);
     },
     fileChange() {
       this.file = this.$refs.blogPhoto.files[0];
@@ -86,10 +102,7 @@ export default {
       this.$store.commit("createFileURL", URL.createObjectURL(this.file));
     },
     uploadBlog() {
-      if (
-        this.createBlogTitle.length !== 0 &&
-        this.createBlogContent.length !== 0
-      ) {
+      if (this.blogTitle !== "" && this.blogContent !== "") {
         if (this.file) {
           this.loading = true;
           const storageRef = firebase.storage().ref();
@@ -111,39 +124,53 @@ export default {
               const dataBase = await db.collection("blogs").doc();
               await dataBase.set({
                 blogID: dataBase.id,
-                createBlogContent: this.createBlogContent,
+                blogContent: this.blogContent,
                 blogCoverPhoto: downloadURL,
                 blogCoverPhotoName: this.blogCoverPhotoName,
-                createBlogTitle: this.createBlogTitle,
+                blogTitle: this.blogTitle,
                 profileId: this.profileId,
+                author: this.fullName,
                 date: createdTime,
               });
-              this.modalMessage =
-                "Your post have succesfully uploaded";
+              await this.$store.dispatch("getPost");
+              this.modalMessage = "Your post have succesfully uploaded";
               this.loading = false;
               this.modalActive = true;
-              await this.$store.dispatch("getPost");
+              this.blogID = dataBase.id;
             }
           );
           return;
         }
+        this.error = true;
+        this.errorMsg = "Please upload a cover photo!";
+        setTimeout(() => {
+          this.error = false;
+        }, 5000);
         return;
       }
+      this.error = true;
+      this.errorMsg = "Please fill the title and content!";
+      setTimeout(() => {
+        this.error = false;
+      }, 5000);
       return;
     },
   },
   computed: {
-    createBlogTitle: {
+    fullName: function() {
+      return this.firstName + " " + this.lastName;
+    },
+    blogTitle: {
       get() {
-        return this.$store.state.createBlogTitle;
+        return this.$store.state.blogTitle;
       },
       set(payload) {
         this.$store.commit("updateBlogTitle", payload);
       },
     },
-    createBlogContent: {
+    blogContent: {
       get() {
-        return this.$store.state.createBlogContent;
+        return this.$store.state.blogContent;
       },
       set(payload) {
         this.$store.commit("newBlogPost", payload);
@@ -166,7 +193,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
+  margin: 100px auto;
   min-height: 100vh;
 }
 .quill-editor {
@@ -220,6 +247,29 @@ export default {
   span {
     font-size: 1rem;
     align-self: center;
+  }
+}
+
+.invisible {
+  opacity: 0 !important;
+}
+
+.err-message {
+  width: 100%;
+  border-radius: 8px;
+  background-color: #303030;
+  opacity: 1;
+  transition: 0.5s ease all;
+
+  p {
+    color: #fff;
+    font-size: 16px;
+    margin: 1%;
+  }
+
+  span {
+    font-size: 14px;
+    font-weight: 600;
   }
 }
 </style>

@@ -8,7 +8,11 @@
         </div>
         <input type="text" v-model="email" placeholder="Email" />
         <input type="password" v-model="password" placeholder="Password" />
-        <router-link class="text-decoration-none text-muted"  to="/reset-password">Forgot password?</router-link>
+        <router-link
+          class="text-decoration-none text-muted"
+          to="/reset-password"
+          >Forgot password?</router-link
+        >
         <input type="submit" name="" value="Login" href="#" />
         <router-link
           class="text-decoration-none text-primary mb-2"
@@ -58,14 +62,9 @@ export default {
           const user = await firebase
             .auth()
             .signInWithEmailAndPassword(this.email, this.password);
-<<<<<<< HEAD
-          console.log("user", user);
-          this.$router.push({ name: "About" });
-=======
-            
+
           console.log(user);
           this.$router.push({ name: "Home" });
->>>>>>> edcf56eea0ea776d641bf3fdc6d37520ee137259
         } catch (error) {
           this.error = messageRespone.AUTHENTICATION.INCORRECT_ACCOUNT;
         }
@@ -93,6 +92,4 @@ export default {
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
