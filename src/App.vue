@@ -12,14 +12,12 @@
 <!-- <link href="http://fonts.cdnfonts.com/css/basis-grotesque-pro" rel="stylesheet">
     <link href="http://fonts.cdnfonts.com/css/imperator" rel="stylesheet">
     <link href="http://fonts.cdnfonts.com/css/harriet-text" rel="stylesheet"> -->\
-  
-<script>
 
+<script>
 import defaultLayout from "./layout/default.vue";
 import unauthLayout from "./layout/unauth.vue";
 import firebase from "firebase/app";
 import "firebase/auth";
-
 export default {
   components: {
     defaultLayout,
@@ -39,7 +37,7 @@ export default {
         this.$store.dispatch("getCurrentUser", user);
       }
     });
-    this.$store.dispatch("getPost")
+    this.$store.dispatch("getPost");
   },
 };
 </script>
@@ -47,22 +45,22 @@ export default {
     <link href="http://fonts.cdnfonts.com/css/imperator" rel="stylesheet">
     <link href="http://fonts.cdnfonts.com/css/harriet-text" rel="stylesheet"> -->
 <style lang="scss">
-@import url('http://fonts.cdnfonts.com/css/basis-grotesque-pro');
-@import url('http://fonts.cdnfonts.com/css/imperator');
-@import url('http://fonts.cdnfonts.com/css/harriet-text');
+@import url("http://fonts.cdnfonts.com/css/basis-grotesque-pro");
+@import url("http://fonts.cdnfonts.com/css/imperator");
+@import url("http://fonts.cdnfonts.com/css/harriet-text");
 #app {
   // font-family: 'Harriet Text', sans-serif;
-  font-family: 'Basis Grotesque Pro';
+  font-family: "Basis Grotesque Pro";
   font-weight: 400;
   text-align: center;
   overflow: hidden;
 }
 .card {
-  min-height:100vh;
+  min-height: 100vh;
   border: none;
   text-align: center;
   justify-content: center;
-  display:flex;
+  display: flex;
 }
 .box {
   margin: 5% auto;
@@ -73,7 +71,6 @@ export default {
   transition: 0.25s;
   border: 1px solid;
   border-radius: 10px;
-  
 }
 
 .box input[type="text"],
@@ -192,27 +189,24 @@ a.socialIcon:hover,
   transition: all 0.8s;
 }
 .text-primary {
-  color:#4795fa !important;
-  
+  color: #4795fa !important;
 }
 .b-pagination-pills .page-item .page-link {
   width: 50px;
   height: 50px;
-    border-radius: 30rem !important;
-    margin-left: 0.5rem;
-    line-height: 1;
-    color: #000;
-    font-size:1.2rem;
-    background: transparent;
-    border: none;
-    padding: 15px;
-    
+  border-radius: 30rem !important;
+  margin-left: 0.5rem;
+  line-height: 1;
+  color: #000;
+  font-size: 1.2rem;
+  background: transparent;
+  border: none;
+  padding: 15px;
 }
 .page-item.active .page-link {
-    z-index: 3;
-    color: #fff;
-    background-color: #181d25!important;
-    border:none !important;
+  z-index: 3;
+  color: #fff;
+  background-color: #181d25 !important;
+  border: none !important;
 }
 </style>
-

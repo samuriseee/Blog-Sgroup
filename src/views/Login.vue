@@ -8,11 +8,15 @@
         </div>
         <input type="text" v-model="email" placeholder="Email" />
         <input type="password" v-model="password" placeholder="Password" />
-        <router-link class="text-decoration-none text-muted"  to="/reset-password">Forgot password?</router-link>
+        <router-link
+          class="text-decoration-none text-muted"
+          to="/reset-password"
+          >Forgot password?</router-link
+        >
         <input type="submit" name="" value="Login" href="#" />
         <router-link
           class="text-decoration-none text-primary mb-2"
-          to="/register"
+          :to="{ name: 'Register' }"
           >Sign up</router-link
         >
         <div class="col-md-12">
@@ -58,7 +62,7 @@ export default {
           const user = await firebase
             .auth()
             .signInWithEmailAndPassword(this.email, this.password);
-            
+
           console.log(user);
           this.$router.push({ name: "Home" });
         } catch (error) {
@@ -88,6 +92,4 @@ export default {
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
