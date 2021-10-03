@@ -46,8 +46,15 @@ import "firebase/auth";
 export default {
   data() {
     return {
-      toggleMenu: null,
+      user: null,
     };
+  },
+  created() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.user = user;
+      }
+    });
   },
   methods: {
     async signOut() {
