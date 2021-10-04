@@ -22,6 +22,17 @@ export default new Vuex.Store({
     blogPosts: [],
     blogLoaded: null,
   },
+  getters: {
+    homeHeaderPost(state) {
+      return state.blogPosts.slice(0, 1);
+    },
+    homeGridPost(state) {
+      return state.blogPosts.slice(1, 4);
+    },
+    homeFooterPost(state) {
+      return state.blogPosts.slice(5, 6);
+    },
+  },
   mutations: {
     setBlogState(state, payload) {
       state.blogTitle = payload.blogTitle;

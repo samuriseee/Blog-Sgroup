@@ -1,14 +1,13 @@
 <template>
   <div class="container">
-    <!-- <div @click="$router.push('/blogs/' + 0)" class="firstBlog">
-      <img :src="blogs[0].thumbnail" class="mainPic" />
+    <div v-for="blog in homeHeaderPost" :key="blog.blogID"
+          @click="$router.push('/blogs/' + blog.blogID)" class="firstBlog">
+      <h1 class="newPostTitle"> Newest Post</h1>
+      <img :src="blog.blogCoverPhoto" class="mainPic" />
       <h1>
-        {{ blogs[0].title }}
+        {{ blog.blogTitle }}
       </h1>
-      <p style="font-size: 1.4rem;width:60%;margin:0 auto;">
-        {{ blogs[0].content }}
-      </p>
-    </div> -->
+    </div>
     <div class="blogs">
       <h3>All articles</h3>
 
@@ -33,7 +32,7 @@
               @click="$router.push('/blogs/' + blog.blogID)"
             />
           </div>
-          <p>{{ blog.createBlogTitle }}</p>
+          <p>{{ blog.blogTitle }}</p>
         </div>
       </div>
       <b-row>
@@ -65,6 +64,9 @@ export default {
     },
     totalRows() {
       return this.$store.state.blogPosts.length;
+    },
+    homeHeaderPost() {
+      return this.$store.getters.homeHeaderPost
     },
   },
   data() {
@@ -101,7 +103,7 @@ $black: #000000;
     padding: 10px;
     margin: 0 auto;
     width: 80%;
-    font-size: 3rem;
+    font-size: 2.3rem;
     font-weight: 700;
     @media only screen and (min-width: 300px) and (max-width: 780px) {
       font-size: 2rem;
@@ -110,7 +112,6 @@ $black: #000000;
   }
   .mainPic {
     width: 80%;
-    margin: 70px 0px;
   }
 }
 .blogs h3 {
@@ -193,10 +194,17 @@ $black: #000000;
   cursor: pointer;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   transition-duration: 0.2s;
+  margin: 120px 0px 5px;
   &:hover {
     transform: scale(1.015);
     transition: 0.2s ease-in;
     color: green;
   }
+}
+.newPostTitle {
+  padding:20px !important;
+  font-size: 3rem !important;
+  text-transform: uppercase;
+  font-family: 'Harriet Text', sans-serif;
 }
 </style>

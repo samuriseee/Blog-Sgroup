@@ -29,13 +29,15 @@
       <!-- furtherReading -->
       <div class="wrapper">
         <div
-          v-for="blog in paginatedItems"
-          :key="blog.id"
-          @click="$router.push('/blogs/' + blog.id)"
+          v-for="blog in blogPosts" :key="blog.blogID"
+          @click="$router.push('/blogs/' + blog.blogID)"
         >
           <article>
-            <img :src="blog.thumbnail" />
-            <p>{{ blog.title }}</p>
+            <img
+              :src="blog.blogCoverPhoto"
+              @click="$router.push('/blogs/' + blog.blogID)"
+            />
+            <p>{{ blog.blogTitle }}</p>
           </article>
         </div>
       </div>
@@ -64,7 +66,11 @@ export default {
   },
   computed: {
     blogPosts() {
-      return this.$store.state.blogPosts;
+      const items = this.$store.state.blogPosts;
+      return items.slice(
+        (this.currentPage - 1) * this.perPage,
+        this.currentPage * this.perPage
+      );
     },
     totalRows() {
       return this.$store.state.blogPosts.length;
@@ -74,7 +80,7 @@ export default {
     return {
       paginatedItems: this.$store.state.blogPosts,
       currentPage: 1,
-      perPage: 5,
+      perPage: 3,
       blogDetail: "",
     };
   },

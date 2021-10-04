@@ -20,52 +20,36 @@
     </section>
 
     <div class="sectionBlog">
-      <div class="headerBlog" @click="$router.push('/blogs/' + 10)">
+      <div class="headerBlog" v-for="blog in homeHeaderPost" :key="blog.blogID"
+          @click="$router.push('/blogs/' + blog.blogID)">
         <div class="headerBlogText" >
-          <h2>{{ blogs[0].title }}</h2>
-          <p>{{ blogs[0].content }}</p>
+          <h2>{{ blog.blogTitle }}</h2>
           <span>Read more</span>
         </div>
         <div class="headerBlogImg">
-          <img :src="blogs[0].thumbnail" alt="" />
+          <img :src="blog.blogCoverPhoto" alt="" />
         </div>
       </div>
 
       <div class="gridBlog">
-        <div class="gridItem" @click="$router.push('/blogs/' + 11)">
-          <img :src="blogs[1].thumbnail" alt="" />
+        <div class="gridItem" v-for="blog in homeGridPost" :key="blog.blogID"
+          @click="$router.push('/blogs/' + blog.blogID)">
+          <img :src="blog.blogCoverPhoto" alt="" />
           <div> 
-            <h2>{{ blogs[1].title }}</h2>
-            <p>{{ blogs[1].content }}</p>
-            <span>Read more</span>
-          </div>
-        </div>
-        <div class="gridItem" @click="$router.push('/blogs/' + 12)">
-          <img :src="blogs[2].thumbnail" alt="" />
-          <div> 
-            <h2>{{ blogs[2].title }}</h2>
-            <p>{{ blogs[2].content }}</p>
-            <span>Read more</span>
-          </div>
-        </div>
-        <div class="gridItem" @click="$router.push('/blogs/' + 13)">
-          <img :src="blogs[3].thumbnail" alt="" />
-          <div> 
-            <h2>{{ blogs[3].title }}</h2>
-            <p>{{ blogs[3].content }}</p>
+            <h2>{{ blog.blogTitle }}</h2>
             <span>Read more</span>
           </div>
         </div>
       </div>
 
-      <div class="footerBlog" @click="$router.push('/blogs/' + 14)">
+      <div class="footerBlog" v-for="blog in homeFooterPost" :key="blog.blogID"
+          @click="$router.push('/blogs/' + blog.blogID)">
         <div class="footerBlogText">
-          <h2>{{ blogs[4].title }}</h2>
-          <p>{{ blogs[4].content }}</p>
+          <h2>{{ blog.blogTitle }}</h2>
           <span>Read more</span>
         </div>
         <div class="footerBlogImg">
-          <img :src="blogs[4].thumbnail" alt="" />
+          <img :src="blog.blogCoverPhoto" alt="" />
         </div>
       </div>
     <div class="toBlogs">
@@ -148,6 +132,17 @@ export default {
       ],
     };
   },
+  computed: {
+    homeHeaderPost() {
+      return this.$store.getters.homeHeaderPost
+    },
+    homeGridPost() {
+      return this.$store.getters.homeGridPost
+    },
+    homeFooterPost() {
+      return this.$store.getters.homeFooterPost
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -240,7 +235,6 @@ export default {
     display:flex;
     .gridItem {
       width: 100%;
-      
       border: 1px solid #a4a3a5;
       border-radius: 10px;
       margin: 20px 0px;
@@ -261,7 +255,7 @@ export default {
       }
       h2 {
         height: 100px;
-        font-size:1.5rem;
+        font-size:1.3rem;
       }
       p {
         height:120px;
@@ -292,7 +286,8 @@ export default {
 }
 .headerBlogText {
   padding: 40px;
-  text-align: justify;
+  text-align: center;
+  margin: 0 auto;
   h2 {
     padding: 20px 0px;
     
@@ -339,6 +334,7 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: left;
+  flex-direction: row-reverse;
   img {
     width: 100%;
     height: 700px;
@@ -347,8 +343,10 @@ export default {
   .footerBlogText {
     width:60%;
     padding: 20px;
+    margin: 0 auto;
     h2,
     p {
+      font-size:4rem;
       padding: 10px 20px;
     }
     span {
