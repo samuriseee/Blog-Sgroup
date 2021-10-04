@@ -35,17 +35,17 @@
         >
           Next on the pipeline
         </p>
-        <p>{{ blogDetail.blogContent }}</p>
+        <p v-html="blogDetail.blogContent"></p>
         <img src="https://www.linkpicture.com/q/angle.jpg" alt="" />
-        <p>{{ blogDetail.blogContent }}</p>
-        <p>{{ blogDetail.blogContent }}</p>
+        <p v-html="blogDetail.blogContent"></p>
+        <p v-html="blogDetail.blogContent"></p>
       </main>
       <postBottom />
       <!-- furtherReading -->
       <div class="wrapper">
         <div
           v-for="blog in paginatedItems"
-          :key="'blog-' + blog.id"
+          :key="blog.id"
           @click="$router.push('/blogs/' + blog.id)"
         >
           <article>
