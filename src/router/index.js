@@ -10,7 +10,6 @@ import BlogPreview from "../views/BlogPreview.vue";
 import firebase from "firebase/app";
 import "firebase/auth";
 
-
 Vue.use(VueRouter);
 
 const routes = [
@@ -18,24 +17,24 @@ const routes = [
     path: "/login",
     name: "Login",
     component: Login,
-    meta : {
-      layout: "LoginLayout"
+    meta: {
+      layout: "LoginLayout",
     },
   },
   {
     path: "/register",
     name: "Register",
     component: Register,
-    meta : {
-      layout: "LoginLayout"
+    meta: {
+      layout: "LoginLayout",
     },
   },
   {
     path: "/reset-password",
     name: "ForgotPass",
     component: ForgotPass,
-    meta : {
-      layout: "LoginLayout"
+    meta: {
+      layout: "LoginLayout",
     },
   },
   {
@@ -53,8 +52,7 @@ const routes = [
   {
     path: "/about",
     name: "About",
-    component: () =>
-      import("../views/About.vue"),
+    component: () => import("../views/About.vue"),
     meta: { requireAuth: true },
   },
   {
@@ -80,7 +78,17 @@ const routes = [
     component: BlogPreview,
     meta: { requireAuth: true },
   },
-  
+  {
+    path: "/edit-blog/:id",
+    name: "editBlog",
+    component: () => import("../views/EditBlog.vue"),
+    meta: { requireAuth: true },
+  },
+  {
+    path: "*",
+    name: "Page404",
+    component: () => import("../views/404.vue"),
+  },
 ];
 
 const router = new VueRouter({
@@ -88,9 +96,9 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
   // eslint-disable-next-line
-  scrollBehavior (to, from, savedPosition) {
-    return { x: 0, y: 0 , behavior: 'smooth'}
-  }
+  scrollBehavior(to, from, savedPosition) {
+    return { x: 0, y: 0, behavior: "smooth" };
+  },
 });
 
 router.beforeEach((to, from, next) => {
@@ -100,6 +108,5 @@ router.beforeEach((to, from, next) => {
     next("/login");
   } else next();
 });
-
 
 export default router;
