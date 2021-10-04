@@ -30,7 +30,7 @@
       <div class="wrapper">
         <div
           v-for="blog in paginatedItems"
-          :key="'blog-' + blog.id"
+          :key="blog.id"
           @click="$router.push('/blogs/' + blog.id)"
         >
           <article>

@@ -13,14 +13,27 @@
       <h3>All articles</h3>
 
       <div class="grid2">
-        <div
-          v-for="blog in blogPosts"
-          :key="blog.blogID"
-          class="blogContent"
-          @click="$router.push('/blogs/' + blog.blogID)"
-        >
-          <img :src="blog.blogCoverPhoto" />
-          <p>{{ blog.blogTitle }}</p>
+        <div v-for="blog in blogPosts" :key="blog.blogID" id="blogContent">
+          <div>
+            <div class="d-flex">
+              <img
+                :src="require('@/assets/pencil.png')"
+                class="img-edit"
+                @click="editPost(blog)"
+              />
+              <img
+                :src="require('@/assets/remove.png')"
+                class="img-delete"
+                @click="deletePost(blog)"
+              />
+            </div>
+
+            <img
+              :src="blog.blogCoverPhoto"
+              @click="$router.push('/blogs/' + blog.blogID)"
+            />
+          </div>
+          <p>{{ blog.createBlogTitle }}</p>
         </div>
       </div>
       <b-row>
@@ -60,12 +73,22 @@ export default {
       perPage: 8,
     };
   },
+  methods: {
+    deletePost(blog) {
+      this.$store.dispatch("deletePost", blog.blogID);
+    },
+    editPost(blog) {
+      console.log(blog);
+      this.$router.push({ name: "editBlog", params: { id: blog.blogID } });
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 $white: #fffefe;
 $black: #000000;
+
 .container {
   margin-top: 5rem;
   text-align: center;
@@ -120,13 +143,42 @@ $black: #000000;
     }
   }
 }
-.blogContent {
+#blogContent {
   img {
     width: 90%;
     height: 240px;
     margin: 70px 0px 10px 0px;
   }
 }
+
+#blogContent:hover .img-delete {
+  display: inline-block;
+  width: 20px !important;
+  height: auto !important;
+  position: absolute;
+  right: 60px;
+  top: 10px;
+  transform: none !important;
+  transition: none !important;
+}
+
+#blogContent:hover .img-edit {
+  display: inline-block;
+  width: 20px !important;
+  height: auto !important;
+  position: absolute;
+  right: 90px;
+  top: 10px;
+}
+
+#blogContent .img-delete {
+  display: none;
+}
+
+#blogContent .img-edit {
+  display: none;
+}
+
 .b-pagination-pills .page-item {
   .page-link {
     color: #000 !important;

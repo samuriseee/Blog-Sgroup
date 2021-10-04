@@ -23,6 +23,19 @@ export default new Vuex.Store({
     blogLoaded: null,
   },
   mutations: {
+    setBlogState(state, payload) {
+      state.blogTitle = payload.blogTitle;
+      state.blogContent = payload.blogContent;
+      state.blogPhotoFileURL = payload.blogCoverPhoto;
+      state.blogPhotoName = payload.blogCoverPhotoName;
+    },
+
+    filterBlogPost(state, payload) {
+      state.blogPosts = state.blogPosts.filter(
+        (post) => post.blogID !== payload
+      );
+    },
+
     newBlogPost(state, payload) {
       state.blogContent = payload;
     },
@@ -62,7 +75,7 @@ export default new Vuex.Store({
   },
   actions: {
     async getCurrentUser({ commit }) {
-      const dataBase = await db
+      const dataBase = db
         .collection("users")
         .doc(firebase.auth().currentUser.uid);
       const dbResults = await dataBase.get();
@@ -70,7 +83,7 @@ export default new Vuex.Store({
       commit("setProfileInitials");
     },
     async updateUserSettings({ commit, state }) {
-      const dataBase = await db.collection("users").doc(state.profileId);
+      const dataBase = db.collection("users").doc(state.profileId);
       await dataBase.update({
         firstName: state.profileFirstName,
         lastName: state.profileLastName,
@@ -79,7 +92,7 @@ export default new Vuex.Store({
       commit("setProfileInitials");
     },
     async getPost({ state }) {
-      const dataBase = await db.collection("blogs").orderBy("date", "desc");
+      const dataBase = db.collection("blogs").orderBy("date", "desc");
       const dbResults = await dataBase.get();
       dbResults.forEach((doc) => {
         if (!state.blogPosts.some((post) => post.blogID === doc.id)) {
@@ -96,6 +109,25 @@ export default new Vuex.Store({
         }
       });
       state.postLoaded = true;
+    },
+
+    async deletePost({ commit }, payload) {
+      await db
+        .collection("blogs")
+        .doc(payload)
+        .delete()
+        .then(() => {
+          console.log("Document successfully deleted!");
+        })
+        .catch((error) => {
+          console.error("Error removing document: ", error);
+        });
+      commit("filterBlogPost", payload);
+    },
+
+    async updatePost({ commit, dispatch }, payload) {
+      commit("filterBlogPost", payload);
+      await dispatch("getPost");
     },
   },
 });
