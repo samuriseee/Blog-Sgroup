@@ -1,7 +1,8 @@
 <template>
   <div id="nav">
-    <span class="logo" @click="$router.push('/blogs')">nordic rose</span>
-    <ul>
+    
+    <span class="logo" @click="$router.push('/')">nordic rose</span>
+    <ul class="navigation">
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/blogs">Blogs</router-link></li>
       <li><router-link to="/about">About</router-link></li>
@@ -37,6 +38,7 @@
         </div>
       </div>
     </ul>
+    <div class="menuToggle" @click="toggleNavBarMenu()"></div>
   </div>
 </template>
 
@@ -47,6 +49,7 @@ export default {
   data() {
     return {
       user: null,
+      toggleMenu: null,
     };
   },
   created() {
@@ -107,14 +110,17 @@ $black: #000000;
     text-transform: uppercase;
     font-family: "Imperator", sans-serif;
     cursor: pointer;
-    @media only screen and (min-width: 200px) and (max-width: 500px) {
-      display: none;
-    }
-    @media only screen and (min-width: 510px) and (max-width: 1000px) {
+    transition: 0.3s ease-in-out;
+    @media (max-width: 1000px) {
       font-size: 2rem;
       padding: 5px;
+    } 
+  }
+    @media (max-width:450px) {
+      padding: 0px 10px 0;
     }
-    
+  .menuToggle {
+    display: none;
   }
   a {
     font-weight: bold;
@@ -129,21 +135,30 @@ $black: #000000;
     color: $black;
     border-bottom: 2px solid $black;
   }
-  ul {
+  .navigation {
     display: flex;
     align-items: center;
     list-style: none;
     text-transform: uppercase;
     margin-bottom: 0;
     height: 100%;
+    transition: 0.3s ease-in-out;
+    @media (max-width:1000px) {
+      display:none;
+    }
   }
 }
 
-li {
+.navigation li {
   height: 100%;
   font-family: 'Harriet Text', sans-serif;
   a {
     height: 100%;
+  }
+  @media (max-width:1000px) {
+    height: 10%;
+    padding: 30px;
+    font-size:1.5rem;
   }
 }
 .nav-link .dropdown-toggle {
@@ -240,5 +255,53 @@ li {
   padding: 10px 100px;
   box-shadow: 0 5px 20px rgb(0, 0, 0, 0.05);
 }
-
+@media (max-width: 1000px) {
+  #nav {
+    align-items: center;
+  }
+  .navigation {
+    display:none;
+  }
+  .navigation.active {
+    width: 100% !important;
+    height: 100% !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column !important;
+    background: #fff !important;
+  }
+  header .navigation.active li {
+    margin-left: 0rem;
+    padding: 10px;
+  }
+  header .navigation.active li a {
+    font-size: 1.6em;
+    color: #000;
+    font-weight: 300px;
+  }
+  .menuToggle {
+    display:block !important;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: url("../../assets/menu.png");
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    filter: invert(1);
+  }
+  .menuToggle.active {
+    background: url("../../assets/close.png");
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 9;
+    filter: invert(1);
+  }
+}
 </style>

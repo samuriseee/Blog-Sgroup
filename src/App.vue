@@ -71,6 +71,9 @@ export default {
   transition: 0.25s;
   border: 1px solid;
   border-radius: 10px;
+  @media (max-width:650px) {
+    width: 85%;
+  }
 }
 
 .box input[type="text"],

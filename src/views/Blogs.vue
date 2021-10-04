@@ -20,13 +20,12 @@
           @click="$router.push('/blogs/' + blog.blogID)"
         >
           <img :src="blog.blogCoverPhoto" />
-          <p>{{ blog.createBlogTitle }}</p>
+          <p>{{ blog.blogTitle }}</p>
         </div>
       </div>
       <b-row>
         <b-col class="mt-3">
           <b-pagination
-            @change="onPageChanged"
             :total-rows="totalRows"
             :per-page="perPage"
             v-model="currentPage"

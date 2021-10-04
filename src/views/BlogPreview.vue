@@ -1,9 +1,9 @@
 <template>
   <div class="post-view">
     <div class="container quillWrapper">
-      <h2>{{ createBlogTitle }}</h2>
+      <h2>{{ blogTitle }}</h2>
       <img :src="blogCoverPhoto" alt="" />
-      <div class="post-content ql-editor" v-html="createBlogContent"></div>
+      <div class="post-content ql-editor" v-html="blogContent"></div>
     </div>
   </div>
 </template>
@@ -12,11 +12,11 @@
 export default {
   name: "PostPreview",
   computed: {
-    createBlogTitle() {
-      return this.$store.state.createBlogTitle;
+    blogTitle() {
+      return this.$store.state.blogTitle;
     },
-    createBlogContent() {
-      return this.$store.state.createBlogContent;
+    blogContent() {
+      return this.$store.state.blogContent;
     },
     blogCoverPhoto() {
       return this.$store.state.blogPhotoFileURL;

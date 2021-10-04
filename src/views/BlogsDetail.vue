@@ -1,11 +1,5 @@
 <template>
   <div class="container">
-    <h1>
-      A few words about this blog platform. Ghost, and how this site was made
-    </h1>
-    <span style="font-size: 1.3rem"
-      >Why Ghost ($ Figma) instead of Medium, WordPress or other options?</span
-    >
     <div class="title">
       <h2>{{ blogDetail.blogTitle }}</h2>
     </div>
@@ -29,16 +23,7 @@
       </div>
       <!-- main content  -->
       <main>
-        <p>{{ blogDetail.content }}</p>
-        <p
-          style="font-size: 2rem; padding: 40px 0px 20px 0px; font-weight: 700"
-        >
-          Next on the pipeline
-        </p>
-        <p>{{ blogDetail.blogContent }}</p>
-        <img src="https://www.linkpicture.com/q/angle.jpg" alt="" />
-        <p>{{ blogDetail.blogContent }}</p>
-        <p>{{ blogDetail.blogContent }}</p>
+        <p v-html="blogDetail.blogContent"> </p>
       </main>
       <postBottom />
       <!-- furtherReading -->

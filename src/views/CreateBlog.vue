@@ -239,6 +239,10 @@ export default {
   span {
     font-size: 1rem;
   }
+  @media (max-width:991px) {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 .upload-file {
   input {
@@ -247,6 +251,10 @@ export default {
   span {
     font-size: 1rem;
     align-self: center;
+  }
+  @media (max-width:991px) {
+    display:flex;
+    flex-direction: column !important;
   }
 }
 

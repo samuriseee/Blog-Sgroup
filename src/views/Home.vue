@@ -34,21 +34,27 @@
       <div class="gridBlog">
         <div class="gridItem" @click="$router.push('/blogs/' + 11)">
           <img :src="blogs[1].thumbnail" alt="" />
-          <h2>{{ blogs[1].title }}</h2>
-          <p>{{ blogs[1].content }}</p>
-          <span>Read more</span>
+          <div> 
+            <h2>{{ blogs[1].title }}</h2>
+            <p>{{ blogs[1].content }}</p>
+            <span>Read more</span>
+          </div>
         </div>
         <div class="gridItem" @click="$router.push('/blogs/' + 12)">
           <img :src="blogs[2].thumbnail" alt="" />
-          <h2>{{ blogs[2].title }}</h2>
-          <p>{{ blogs[2].content }}</p>
-          <span>Read more</span>
+          <div> 
+            <h2>{{ blogs[2].title }}</h2>
+            <p>{{ blogs[2].content }}</p>
+            <span>Read more</span>
+          </div>
         </div>
         <div class="gridItem" @click="$router.push('/blogs/' + 13)">
           <img :src="blogs[3].thumbnail" alt="" />
-          <h2>{{ blogs[3].title }}</h2>
-          <p>{{ blogs[3].content }}</p>
-          <span>Read more</span>
+          <div> 
+            <h2>{{ blogs[3].title }}</h2>
+            <p>{{ blogs[3].content }}</p>
+            <span>Read more</span>
+          </div>
         </div>
       </div>
 
@@ -113,7 +119,7 @@ export default {
             "https://www.nordicrose.net/content/images/2020/03/hello2.gif",
           title: "Voluptatibus consequatur dolor harum qui.",
           content:
-            "Repellendus omnis aut consectetur molestiae deleniti minus rem. Laboriosam sed sit itaque tempora dolorum cum ipsum quas. Delectus eius explicabo aut quas atque...",
+            "Repellendus omnis aut consectetur molestiae deleniti minus rem. L quas.",
           id: "12",
         },
         {
@@ -124,7 +130,7 @@ export default {
             "https://www.nordicrose.net/content/images/2020/03/ghost-figma-publishing-cms-design.gif",
           title: "Eos minima est dorel la.",
           content:
-            "Repellendus omnis aut consectetur molestiae deleniti minus rem. Laboriosam sed sit itaque tempora dolorum cum ipsum quas.",
+            "Repellendus omnis aut consectetur molestiae deleniti minus rem. Laboriosam sed sit.",
           id: "13",
         },
         {
@@ -157,12 +163,14 @@ export default {
   position: relative;
   width: 100%;
   display: flex;
-  padding: 0px 100px;
+  padding: 100px 100px;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
   text-align: left;
-  
+  @media (max-width:1000px) {
+    flex-direction: column-reverse;
+  }
 }
 .content .textBox {
   position: relative;
@@ -175,14 +183,23 @@ export default {
   font-size: 5em;
   line-height: 1.4em;
   font-family: 'Harriet Text', sans-serif;
+  @media (max-width:1000px) {
+    font-size: 4rem;
+  }
 }
 .content .textBox p {
   color: rgb(0, 0, 0);
   font-size: 1.2rem;
+  @media (max-width:1000px) {
+    font-size: 1.2rem !important;
+  }
 }
-.content .textBox .btn {
-  margin-top: 2rem;
-  display: flex;
+.imgBox {
+  img {
+    @media (max-width:600px) {
+      width:400px;
+    }
+  }
 }
 .sectionBlog {
   width: 80%;
@@ -211,7 +228,10 @@ export default {
       transition: 0.3s ease-out;
       color: green;
     }
-    
+    @media (max-width:1000px) {
+        height: auto;
+        flex-direction: column-reverse;
+      }
   }
   .gridBlog {
     width: 95%;
@@ -220,6 +240,7 @@ export default {
     display:flex;
     .gridItem {
       width: 100%;
+      
       border: 1px solid #a4a3a5;
       border-radius: 10px;
       margin: 20px 0px;
@@ -227,6 +248,9 @@ export default {
       transform: perspective(1px) translateZ(0);
       box-shadow: 0 0 1px rgba(0, 0, 0, 0);
       transition-duration: 0.3s;
+      @media (max-width:1000px) {
+        flex-direction: column-reverse;
+      }
       &:hover {
         transform: scale(1.03);
         transition: 0.3s ease-out;
@@ -237,15 +261,19 @@ export default {
       }
       h2 {
         height: 100px;
-        
+        font-size:1.5rem;
       }
       p {
         height:120px;
       }
     }
+    @media (max-width:1000px) {
+        flex-direction: column-reverse;
+      }
   }
   .footerBlog {
     width: 95%;
+    height:700px;
     border: 1px solid #a4a3a5;
     border-radius: 10px;
     cursor: pointer;
@@ -257,6 +285,9 @@ export default {
       transition: 0.3s ease-out;
       color: green;
     }
+    @media (max-width:1000px) {
+        display:none;
+      }
   }
 }
 .headerBlogText {
@@ -264,6 +295,7 @@ export default {
   text-align: justify;
   h2 {
     padding: 20px 0px;
+    
   }
   span {
     display: flex;
@@ -271,11 +303,17 @@ export default {
     cursor: pointer;
     font-size: 1.2rem;
   }
+  @media (max-width:1000px) {
+    width:100%;
+  }
 }
 .headerBlogImg img {
-  width: 100%;
+  width:100%;
   height: 300px;
   border-radius: 10px;
+  @media (max-width:1000px) {
+    margin-top:-50px;
+  }
 }
 .gridItem {
   text-align: left;
