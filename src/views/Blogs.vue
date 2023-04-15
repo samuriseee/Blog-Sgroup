@@ -1,8 +1,12 @@
 <template>
   <div class="container">
-    <div v-for="blog in homeHeaderPost" :key="blog.blogID"
-          @click="$router.push('/blogs/' + blog.blogID)" class="firstBlog">
-      <h1 class="newPostTitle"> Newest Post</h1>
+    <div
+      v-for="blog in homeHeaderPost"
+      :key="blog.blogID"
+      @click="$router.push('/blogs/' + blog.blogID)"
+      class="firstBlog"
+    >
+      <h1 class="newPostTitle">Newest Post</h1>
       <img :src="blog.blogCoverPhoto" class="mainPic" />
       <h1>
         {{ blog.blogTitle }}
@@ -10,27 +14,31 @@
     </div>
     <div class="blogs">
       <h3>All articles</h3>
-
       <div class="grid2">
         <div v-for="blog in blogPosts" :key="blog.blogID" id="blogContent">
           <div>
-            <div class="d-flex">
-              <img
-                :src="require('@/assets/pencil.png')"
-                class="img-edit"
-                @click="editPost(blog)"
-              />
-              <img
-                :src="require('@/assets/remove.png')"
-                class="img-delete"
-                @click="deletePost(blog)"
-              />
-            </div>
-
             <img
               :src="blog.blogCoverPhoto"
               @click="$router.push('/blogs/' + blog.blogID)"
             />
+          </div>
+          <div v-if="userRole == 'admin'" class="d-flex justify-content-around">
+            <button
+              type="button"
+              :src="require('@/assets/pencil.png')"
+              class="button-edit btn btn-warning"
+              @click="editPost(blog)"
+            >
+              Edit
+            </button>
+            <button
+              type="button"
+              :src="require('@/assets/remove.png')"
+              class="button-delete btn btn-danger"
+              @click="deletePost(blog)"
+            >
+              Delete
+            </button>
           </div>
           <p>{{ blog.blogTitle }}</p>
         </div>
@@ -66,13 +74,16 @@ export default {
       return this.$store.state.blogPosts.length;
     },
     homeHeaderPost() {
-      return this.$store.getters.homeHeaderPost
+      return this.$store.getters.homeHeaderPost;
+    },
+    userRole() {
+      return this.$store.state.profileRole;
     },
   },
   data() {
     return {
       currentPage: 1,
-      perPage: 8,
+      perPage: 6,
     };
   },
   methods: {
@@ -98,6 +109,7 @@ $black: #000000;
     width: 65%;
     margin: 50px auto;
     border-top: 2px solid $black;
+    transition: 0.25s ease-out;
   }
   h1 {
     padding: 10px;
@@ -131,8 +143,8 @@ $black: #000000;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     transition-duration: 0.3s;
     &:hover {
-      transform: scale(1.06);
-      transition: 0.3s ease-out;
+      transform: scale(1.03);
+      transition: 0.2s ease-out;
       color: green;
     }
     p {
@@ -202,9 +214,9 @@ $black: #000000;
   }
 }
 .newPostTitle {
-  padding:20px !important;
+  padding: 20px !important;
   font-size: 3rem !important;
   text-transform: uppercase;
-  font-family: 'Harriet Text', sans-serif;
+  font-family: "Harriet Text", sans-serif;
 }
 </style>

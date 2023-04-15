@@ -1,7 +1,7 @@
 <template>
   <div id="nav">
-    
-    <span class="logo" @click="$router.push('/')">nordic rose</span>
+    <img class="logoImage" @click="$router.push('/')" src="https://yt3.googleusercontent.com/e8P1A4RdQYbCQdoDBPamz_G_Yl5bSEtdvQquhvWEKy5sYmR1BpIcDinyGxYqB1fQRdO0CB_Q=s900-c-k-c0x00ffffff-no-rj" alt="">
+    <!-- <span class="logo" @click="$router.push('/')">Jazzin Blogs</span> -->
     <ul class="navigation">
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/blogs">Blogs</router-link></li>
@@ -93,7 +93,7 @@ $black: #000000;
 #nav {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   margin: 0 auto;
   padding: 0px 50px 0;
   border-bottom: 1px solid #c6c6c6;
@@ -109,7 +109,7 @@ $black: #000000;
     padding: 0 5px 10px;
     text-transform: uppercase;
     font-family: "Imperator", sans-serif;
-    cursor: pointer;
+    
     transition: 0.3s ease-in-out;
     @media (max-width: 1000px) {
       font-size: 2rem;
@@ -303,5 +303,10 @@ $black: #000000;
     z-index: 9;
     filter: invert(1);
   }
+}
+.logoImage {
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
 }
 </style>

@@ -39,7 +39,7 @@ export default {
           id: "0",
           title: "Lorem Ipsum",
           image:
-            "https://media.giphy.com/media/h2OEMQxsQ2I8Zz8tP5/giphy.gif",
+            "https://www.udiscovermusic.com/wp-content/uploads/2020/10/Bill-Evans-GettyImages-84893775-1000x600.jpg",
           content:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
         },
@@ -47,7 +47,7 @@ export default {
           id: "1",
           title: "",
           image:
-            "https://media.giphy.com/media/LOF4oIgHuRCaAI8kSW/giphy.gif",
+            "https://www.udiscovermusic.com/wp-content/uploads/2020/02/Bill-Evans-GettyImages-84843305.jpg",
           content:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
         },
@@ -55,16 +55,16 @@ export default {
           id: "2",
           title: "Lorem Ipsum",
           image:
-            "https://media.giphy.com/media/LOF4oIgHuRCaAI8kSW/giphy.gif",
+            "https://ichef.bbci.co.uk/news/976/cpsprodpb/181C7/production/_86695789_davis1_ap.jpg",
           content:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
         },
         {
           id: "3",
           title: "Lorem Ipsum",
-          image: "https://media.giphy.com/media/gghYespvi7bBL6hsab/giphy.gif",
-          image1: "https://media.giphy.com/media/YewmDPD4ymnaQTkEFM/giphy.gif",
-          image2: "https://media.giphy.com/media/H3N6RzQQhjii7wlfIW/giphy.gif",
+          image: "https://cdn.britannica.com/62/194462-131-40622170/Sarah-Vaughan-American-pianist-1946.jpg",
+          image1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvjRDX_uy0KC-D5NS14CmfqBxvN5yec75TFqkYRFXhxefuktUnEs4AwisPI211gfS-3sY&usqp=CAU",
+          image2: "https://www.jazzradio.fr/media/news/thumb/1110x624_501188815.webp",
           content:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
         },

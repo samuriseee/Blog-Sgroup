@@ -1,8 +1,8 @@
 <template>
   <div class="about">
     <div class="introduction">
-      <span class="logo" @click="$router.push('/blogs')">nordic rose</span>
-      <h2>This is a page</h2>
+      <span class="logo" @click="$router.push('/blogs')">JAZZ</span>
+      <h2>Why not?</h2>
     </div>
     <Aboutcontent />
     <Slogan />

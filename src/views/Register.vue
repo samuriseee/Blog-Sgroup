@@ -74,6 +74,7 @@ export default {
             lastName: this.lastName,
             username: this.username,
             email: this.email,
+            role: "user",
           });
           this.$router.push({ name: "Home" });
         } catch (error) {
