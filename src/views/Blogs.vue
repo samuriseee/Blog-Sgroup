@@ -11,6 +11,9 @@
       <h1>
         {{ blog.blogTitle }}
       </h1>
+      <p class="extractMainContent">
+        {{ extractContent(blog.blogContent, 300) }}
+      </p>
     </div>
     <div class="blogs">
       <h3>All articles</h3>
@@ -26,7 +29,7 @@
             <button
               type="button"
               :src="require('@/assets/pencil.png')"
-              class="button-edit btn btn-warning"
+              class="button-edit"
               @click="editPost(blog)"
             >
               Edit
@@ -34,13 +37,16 @@
             <button
               type="button"
               :src="require('@/assets/remove.png')"
-              class="button-delete btn btn-danger"
+              class="button-delete"
               @click="deletePost(blog)"
             >
               Delete
             </button>
           </div>
           <p>{{ blog.blogTitle }}</p>
+          <span class="extractContent">
+            {{ extractContent(blog.blogContent, 100) }}
+          </span>
         </div>
       </div>
       <b-row>
@@ -94,6 +100,9 @@ export default {
       console.log(blog);
       this.$router.push({ name: "editBlog", params: { id: blog.blogID } });
     },
+    extractContent(content, n) {
+      return content.replace(/<\/?[^>]+(>|$)/g, "").substring(0, n);
+    },
   },
 };
 </script>
@@ -106,7 +115,7 @@ $black: #000000;
   margin-top: 5rem;
   text-align: center;
   .blogs {
-    width: 65%;
+    width: 75%;
     margin: 50px auto;
     border-top: 2px solid $black;
     transition: 0.25s ease-out;
@@ -133,6 +142,7 @@ $black: #000000;
 }
 .grid2 {
   display: grid;
+  gap: 20px;
   grid-template-columns: 1fr 1fr;
   cursor: pointer;
   @media only screen and (min-width: 300px) and (max-width: 780px) {
@@ -161,6 +171,11 @@ $black: #000000;
     width: 90%;
     height: 240px;
     margin: 70px 0px 10px 0px;
+    object-fit: cover;
+    @media only screen and (min-width: 300px) and (max-width: 780px) {
+      width: 100%;
+      height: 200px;
+    }
   }
 }
 
@@ -218,5 +233,33 @@ $black: #000000;
   font-size: 3rem !important;
   text-transform: uppercase;
   font-family: "Harriet Text", sans-serif;
+}
+button {
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  background-color: #fff;
+  color: #000;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
+}
+.extractContent {
+  padding: 20px;
+  font-size: 1rem;
+  font-weight: 100;
+  text-align: justify !important;
+}
+.extractMainContent {
+  width: 70%;
+  margin: 0 auto;
+  font-size: 1.2rem;
 }
 </style>

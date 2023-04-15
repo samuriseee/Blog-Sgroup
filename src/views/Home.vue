@@ -126,7 +126,7 @@ export default {
   position: relative;
   width: 100%;
   display: flex;
-  padding: 100px 100px;
+  padding: 100px 100px 0 100px;
   margin: 0 auto;
   justify-content: space-evenly;
   align-items: center;
@@ -231,7 +231,8 @@ export default {
         align-items: center;
       }
       p {
-        height: 120px;
+        height: 160px;
+        font-size: 1rem;
       }
     }
     @media (max-width: 1000px) {
@@ -289,6 +290,11 @@ export default {
   p {
     padding: 10px 20px;
   }
+  p {
+    height: 200px;
+    font-size: 1rem;
+    height: auto;
+  }
 }
 .footerBlog {
   display: flex;
@@ -341,7 +347,7 @@ export default {
 .imgBox {
   img {
     width: 500px;
-    height: 500px;
+    height: auto;
     filter: invert(0.9);
   }
 }
@@ -350,7 +356,9 @@ export default {
   bottom: 10px;
   right: 10px;
   font-size: 1rem;
-  font-weight: 600;
-  padding: 5px;
+  padding: 5px 15px;
+  border: 1px solid #d4cdcd;
+  border-radius: 10px;
+  margin: 5px 10px;
 }
 </style>
