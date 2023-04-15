@@ -68,7 +68,7 @@
         <div class="footerBlogText">
           <h2>{{ blog.blogTitle }}</h2>
           <p>
-              {{ extractContent(blog.blogContent, 500) }}
+              {{ extractContent(blog.blogContent, 300) }}
             </p>
           <span class="readMore">Read more</span>
         </div>
@@ -306,7 +306,7 @@ export default {
     padding: 20px;
     margin: 0 auto;
     h2{
-      font-size: 4rem;
+      font-size: 2.5rem;
       padding: 10px 20px;
     }
     p {
